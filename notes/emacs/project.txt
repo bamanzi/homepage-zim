@@ -5,26 +5,27 @@ Creation-Date: 2012-07-14T20:31:50+08:00
 ====== project ======
 Created 星期六 14 七月 2012
 
+===== ede =====
+
 ===== eproject (by grischka) =====
 需要维护项目的文件列表，所以比较适合基于文件的project；而eproject(by jrockway)以及projectile都以一个目录来指称一个project。
    
 
 ===== eproject (by jrockway) =====
-eproject(-jrockway): eproject-jrockway有项目类型(python/perl/...)的概念，可以扩展项目类型判断方法，可以对不
-同类型的项目配置不同的命令；projectile按目录下是否有.git/.bzr/.hg/_darcs目录来判断project的根目
-录（这些都没有的话，也可以手工建立一个名为.projectile的空文件来标识。前者有7、8文件（最小集为两
-个），后者只有两个文件（最小集仅1个）
- 
+eproject(-jrockway): eproject-jrockway有项目类型(python/perl/...)的概念，可以扩展项目类型判断方法，可以对不同类型的项目配置不同的命令；
 
-===== ede =====
 
 ===== projectile =====
-        
-        
-        
-EmacsWiki: Simple Project Managment
-        
- 83. [emacs] projany.el --- Project Collection, a unified interface to emacs project managers
+projectile按目录下是否有.git/.bzr/.hg/_darcs目录来判断project的根目录（这些都没有的话，也可以手工建立一个名为.projectile的空文件来标识）  
+
+ 
+
+==== EmacsWiki: Simple Project Managment ====
+http://www.emacswiki.org/emacs-en/SimpleProjectManagment
+
+
+==== 补充 ====
+83. [emacs] projany.el --- Project Collection, a unified interface to emacs project managers
     http://www.panix.com/~tehom/my-code/projany.el [2011-05-20 13:43:53]
 35. [emacs]A GNU Emacs global minor mode for dealing with the source code in your projects
     efficiently http://code.google.com/p/emacs-project-m [2011-06-14 06:40:18]

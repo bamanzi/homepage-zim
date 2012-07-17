@@ -3,27 +3,32 @@ Wiki-Format: zim 0.4
 
 ====== Various Goodies 2012-07 ======
 
-===== 1. LinuxMint =====
-其实前几天写过了一篇相关的博文。这里是相关的一些链接。
+===== LinuxMint =====
 * [[http://blog.linuxmint.com/?p=2031|The Linux Mint Blog » Blog Archive » Linux Mint 13 “Maya” released!]]
 	* [[http://www.linuxmint.com/rel_maya_whatsnew.php|New features in Linux Mint 13 - Linux Mint]]
 	* [[http://linuxmint.com/rel_maya.php|Linux Mint 13 Release Notes - Linux Mint]]
 	* [[http://blog.linuxmint.com/?p=2038|Mint 13 Reviews Roundup]]
 
-* [[http://blog.linuxmint.com/?p=1889|The Linux Mint Blog » Blog Archive » Linux Mint 12 “Lisa” released!]]
-	* [[http://www.linuxmint.com/rel_lisa_whatsnew.php|New features in Linux Mint 12 - Linux Mint]]
-	* [[http://linuxmint.com/rel_lisa.php|Linux Mint 12 Release Notes - Linux Mint]]
+'''
+  * [[http://blog.linuxmint.com/?p=1889|The Linux Mint Blog » Blog Archive » Linux Mint 12 “Lisa” released!]]
+    * [[http://www.linuxmint.com/rel_lisa_whatsnew.php|New features in Linux Mint 12 - Linux Mint]]
+    * [[http://linuxmint.com/rel_lisa.php|Linux Mint 12 Release Notes - Linux Mint]]
+'''
 
-* Cinnamon
-	* [[http://blog.linuxmint.com/?p=1910|The Linux Mint Blog » Blog Archive » Introducing Cinnamon]]
-	* [[http://community.linuxmint.com/tutorial/view/2|How to upgrade to a newer release - Linux Mint Community]]
-	* [[http://community.linuxmint.com/tutorial/view/62|Upgrade linux mint in-place using apt - Linux Mint Community]]
+'''
+  * Cinnamon
+    * [[http://blog.linuxmint.com/?p=1910|The Linux Mint Blog » Blog Archive » Introducing Cinnamon]]
+'''
+
+'''
+  * [[http://community.linuxmint.com/tutorial/view/2|How to upgrade to a newer release - Linux Mint Community]]
+    * [[http://community.linuxmint.com/tutorial/view/62|Upgrade linux mint in-place using apt - Linux Mint Community]]
+'''
 
 
-===== 2.Git/Hg/SVN =====
-因为工作上的需要，我最近在研究GitHub以及探索内部开源的一些支撑手段，当然也就碰到了git。但在公司的Windows上使用git不太爽（其实我个人觉得还好，但我觉得在公司内推广git还是有些难度），于是又玩起了mercurial，觉得不错，回头详细写一篇对比。
+===== Git/Hg/SVN =====
 
-==== 2.1. 对比 ====
+==== 对比 ====
 	* [[http://www.oschina.net/news/26598/10-things-i-hate-about-git|我痛恨 Git 的 10 个理由 - 开源中国]]
 	* [[http://www.infoq.com/cn/articles/thoughtworks-practice-partiv|为什么我们要放弃Subversion]]
 	* [[http://www.keakon.net/2009/12/09/%E5%86%B3%E5%AE%9A%E9%87%87%E7%94%A8Mercurial%28Hg%29%E4%BA%86|决定采用Mercurial(Hg)了]]
@@ -37,68 +42,72 @@ Wiki-Format: zim 0.4
 	* [ ] [[http://stackoverflow.com/questions/35837/what-is-the-difference-between-mercurial-and-git|version control - What is the Difference Between Mercurial and Git? - Stack Overflow]]
 	* [ ] [[http://cloudengineblog.wordpress.com/2010/12/13/why-we-chose-mercurial-and-bitbucket/|Why we chose Mercurial and Bitbucket ]]
 
-==== 2.2. 迁移/配合使用 ====
+==== 迁移/配合使用 ====
 	* svn/git
 		* [[http://www.malcolmgroves.com/blog/?p=1043|Migrating SVN to Git with history ]]
 		* [[http://article.yeeyan.org/view/bianjiang/44287|Git SVN 工作流程]]
 	* git/hg
 		* [[https://github.com/schacon/hg-git|schacon/hg-git (Hg-Git Mercurial Plugin)]]
-	* svn/hg
-		* [[http://www.cppblog.com/sunicdavy/archive/2010/01/29/106712.aspx|Mercurial(Hg) 与 SVN的双代码管理 - 战魂小筑 - C++博客]]
-		* [[http://leeiio.me/googlecode-converting-svn-to-hg/|在Google Code上用 Mercurial 取代 Subversion 管理你的项目 – Leeiio Chaos Made]]
-		* [[http://yao-blog.appspot.com/entry/hgsvn%E5%90%8C%E6%AD%A5svn%E5%92%8Cmercurial|HGSVN同步SVN和Mercurial]]
-		* [[http://mercurial.selenic.com/wiki/RepositoryConversion|RepositoryConversion - Mercurial]]
-		* [[http://hgbook.red-bean.com/read/migrating-to-mercurial.html|Migrating to Mercurial - hgbook]]]
-		* [[http://mercurial.selenic.com/wiki/WorkingWithSubversion|WorkingWithSubversion - Mercurial Wiki]] ★★★★
-		* [[http://mercurial.selenic.com/wiki/HgSubversion|HgSubversion - Mercurial]]
-		* [[http://cn.waterlin.org/ProjectManagement/Hg.html|使用 HG 来作为代码管理工具]] (hgsubversion, hgsvn)
-		* [[http://mercurial.aragost.com/kick-start/en/hgsubversion/|Interacting with Subversion]]
+'''
 
-==== 2.3. Git ====
+svn/hg
+    * 
+'''
+[[http://www.cppblog.com/sunicdavy/archive/2010/01/29/106712.aspx|M]][[http://www.cppblog.com/sunicdavy/archive/2010/01/29/106712.aspx|ercurial(Hg) 与 SVN的双代码管理 - 战魂小筑 - C++博客]]
+''    * [[|''[[http://leeiio.me/googlecode-converting-svn-to-hg/|在Google Code上用 Mercurial 取代 Subversion 管理你的项目 – Leeiio Chaos Made]]''.]]''
+''    * [[|''[[http://yao-blog.appspot.com/entry/hgsvn%E5%90%8C%E6%AD%A5svn%E5%92%8Cmercurial|HGSVN同步SVN和Mercurial]]'']]''
+''    * [[|''[[http://mercurial.selenic.com/wiki/RepositoryConversion|RepositoryConversion - Mercurial]]'']] ''
+''    * [[|''[[http://hgbook.red-bean.com/read/migrating-to-mercurial.html|Migrating to Mercurial - hgbook]]]'']''
+''    * [[|''[[http://mercurial.selenic.com/wiki/WorkingWithSubversion|WorkingWithSubversion - Mercurial Wiki]]'']] ★★★★''
+''    * [[|''[[http://mercurial.selenic.com/wiki/HgSubversion|HgSubversion - Mercurial]]'']]''
+[[http://cn.waterlin.org/ProjectManagement/Hg.html|使用 HG 来作为代码管理工具]]'']] (hgsubversion, hgsvn)''
+''    * [[|''[[http://mercurial.aragost.com/kick-start/en/hgsubversion/|Interacting with Subversion]]'']]''
+
+==== Git ====
 	* [[https://github.com/mattharrison/Git-Supervisual-Cheatsheet/|Git Supervisual Cheatsheet]]
-	file:gitcheat.png
+	[[file:gitcheat.png]]
 	* [[http://daemianmack.com/?p=84|magit Cheatsheet]] #emacs
 	* [[http://evilrouters.net/2011/02/18/using-etckeeper-with-git-on-ubuntu/|Using etckeeper with git on Ubuntu]]
-	* [[http://linuxaria.com/recensioni/etckeeper-keep-under-control-your-configuration-files?lang=en|Etckeeper – Keep under control your configuration files !]]
-	* [[http://devsundar.github.com/2012/02/09/Uses-of-git/|Uses of git]]  (除了做VCS，git还有什么其它的用途么?)
+	* [[http://devsundar.github.com/2012/02/09/Uses-of-git/|Uses of git]]
 		* [[http://news.ycombinator.com/item?id=3571040|Hacker News discussion]]
 	* [[http://www.blog.project13.pl/index.php/coding/1192/setup-git-on-windows-to-use-kdiff3-as-its-mergetool/|Setup git on windows to use kdiff3 as it’s mergetool]]
 	* 涉及Git内部机制的几篇文章
-		* [[http://nvie.com/posts/a-successful-git-branching-model/|A successful Git branching model » nvie.com]] ★★★★
+		* [[http://nvie.com/posts/a-successful-git-branching-model/|A successful Git branching model » nvie.com]] ★★★★★
 		* [[http://newartisans.com/2008/05/using-git-as-a-versioned-data-store-in-python/|Using Git as a versioned data store in Python]]
 		* [[http://git-scm.com/2011/07/11/reset.html|Reset Demystified]] (Pro Git的作者详细讲解git reset，据说这是git里面最复杂的一个子命令)
 
-==== 2.4. Hg ====
-	* [[http://hgbook.red-bean.com/|Mercurial: The Definitive Guide]] (hgbook) ★★★★★
-	* [[http://www.ibm.com/developerworks/cn/opensource/os-cn-mercurial/|Mercurial - 分布式版本控制系统]] (IBM developerWorks上的介绍)
+==== Hg ====
+	* [[http://hgbook.red-bean.com/|Mercurial: The Definitive Guide]] (hgbook)
+	* [[http://www.ibm.com/developerworks/cn/opensource/os-cn-mercurial/|Mercurial - 分布式版本控制系统]]
 	* [[http://cloudengineblog.wordpress.com/2010/12/13/why-we-chose-mercurial-and-bitbucket/|Why we chose Mercurial and Bitbucket ]]
 	* [[http://wiki.pylonshq.com/display/pylonscookbook/Mercurial+for+Subversion+Users|Mercurial for Subversion Users - Pylons Cookbook - PythonWeb]]
 
-===== 3.Emacs =====
+===== Emacs =====
 	* [[http://sachachua.com/blog/2012/06/things-that-ive-used-emacs-for/|Things that I've used Emacs for]] ★★★★★
 
-==== 3.1 org-mode ====
+==== org-mode ====
 	* [[http://www.codeproject.com/Articles/383140/Organize-Everything-With-Org-Mode|Organize Everything With Org Mode]]
 	* [[http://sachachua.com/blog/2012/06/literate-programming-emacs-configuration-file/|Literate programming and my Emacs configuration file]]
 	* [[http://mph.puddingbowl.org/2010/02/org-mode-in-your-pocket-is-a-gnu-shaped-devil/|org-mode In Your Pocket Is a GNU-Shaped Devil :: dot unplanned]]
 	* [[https://github.com/alexhenning/ORGMODE-Markdown|ORGMODE-MARKDOWN: Support for exporting to markdown from orgmode]]
 
-==== 3.2 Emacs 24 ====
+==== Emacs 24 ====
 	* [[http://xahlee.org/emacs/emacs24_features.html|New Features in Emacs 24 (by Xah Lee)]]
 		* [[http://xahlee.blogspot.de/2012/04/emacs-24-improvements-describe-char-and.html|Emacs 24 Improvements : copy/paste, describe-char, calc keymap]]
 	* [[http://batsov.com/articles/2011/08/19/a-peek-at-emacs24.html|A peek at Emacs 24 - (think)]]
 	* What’s New in Emacs 24 | Mastering Emacs:  [[http://masteringemacs.org/articles/2011/12/06/what-is-new-in-emacs-24-part-1|part I]], [[http://masteringemacs.org/articles/2011/12/12/what-is-new-in-emacs-24-part-2|part II]]
 
-==== 3.3 CEDET ====
+==== CEDET ====
 	* [[http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html|A Gentle introduction to CEDET]]
-	* [[http://alexott.blogspot.com/2012/06/ecb-fresh-emacscedet.html|Alex Ott's blog: ECB & fresh Emacs/CEDET...]]  (ECB终于有点新进展了)
-	* [[http://epsilonvectorplusplus.wordpress.com/2012/04/27/a-functional-introduction-to-cedet-ede/|A functional introduction to CEDET – EDE ]] (EDE是CEDET提供的工程管理模块)
+	* [[http://alexott.blogspot.com/2012/06/ecb-fresh-emacscedet.html|Alex Ott's blog: ECB & fresh Emacs/CEDET...]]
+	* [[http://epsilonvectorplusplus.wordpress.com/2012/04/27/a-functional-introduction-to-cedet-ede/|A functional introduction to CEDET – EDE ]]
 	* [[http://www.randomsample.de/dru5/node/145|CEDET news ]]
 	* [[http://www.randomsample.de/dru5/node/147|Javascript completions in Emacs using CEDET and Firefox/mozrepl ]]
 
-==== 3.4 Why Emacs (& Emacs vs Vim) ====
+==== Why Emacs (& Emacs vs Vim) ====
 
-	这些链接其实有一半没认真看过，都是陆陆续续添加到Read It Later列表里面的，因为有一阵老想写一篇《为什么我转向了Emacs》，现在觉得其实没多大意义 :-)。
+	这些链接其实有一半没认真看过，都是陆陆续续添加到Read It Later列表里
+	面的，因为有一阵老想写一篇《为什么我转向了Emacs》，现在觉得其实没多大意义 :-)。
 	
 	* [[https://soulogic.com/archives/420|程序式编辑程序]]: 为什么要用 Emacs/Vim，而不是任何其他编辑器 ****
 	* [[http://gnuvince.wordpress.com/2012/02/19/why-i-still-use-emacs/|Why I Still Use Emacs]] ****
@@ -115,23 +124,26 @@ Wiki-Format: zim 0.4
 	* [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim]]
 	* [[http://www.eatingair.com/post/2829859704/why-i-choose-emacs-over-vim|Why I choose Emacs over Vim]]
 	* Vim vs Emacs  « Aaron Meurer's SymPy Blog  [[http://asmeurersympy.wordpress.com/2011/12/20/vim-vs-emacs-part-1/|Part 1]], [[http://asmeurersympy.wordpress.com/2012/01/03/vim-vs-emacs-part-2/|Part 2]], [[http://asmeurersympy.wordpress.com/2012/01/13/vim-vs-emacs-part-3/|Part 3]]
-	* [[http://vim.wikia.com/wiki/Capture_ex_command_output|Capture ex command output - Vim Tips Wiki]] （这个链接其实是一条vim tips，但我当初是因为想在:version里面进行搜索而不知道办法，然后看了这条之后就下决心学习Emacs了）
+	* [[http://vim.wikia.com/wiki/Capture_ex_command_output|Capture ex command output - Vim Tips Wiki]] 这个链接其实是一条vim tips，但我当初是因为想在:version里面进行搜索而不知道办法，然后看了这条之后就下决心学习Emacs了。
+	* Why vim
+		* [[http://users.softlab.ntua.gr/~ttsiod/vim.html|Why I use Vim]] ****
+		* [[http://www.oschina.net/news/25882/why-they-are-using-vi|为什么这些死脑筋们在用 VI ? - 开源中国社区]]
+		* [[http://www.terminally-incoherent.com/blog/2012/03/21/why-vim/|Why Vim? ]] **
+	* [[http://mikethecoder.com/post/22121712651/from-vim-to-emacs-evil-mode-and-back-again|From Vim to Emacs + Evil mode and back again]]
 
-
-==== 3.5 misc ====
+==== misc ====
 	* dokuwiki-el: [[https://launchpad.net/dokuwiki-el|GNU Emacs frontend to the dokuwiki wiki engine]] (zim)
 	* [[http://blog.csdn.net/horstlinux/article/details/7687750|emacs下实现像vim的taglist - horst Hu的专栏 - 博客频道 - CSDN.NET]]
 	* [[https://github.com/yuanotes/taglist|yuanotes/taglist.el]]
 	* [[http://feeding.cloud.geek.nz/2012/05/proper-indentation-of-javascript-files.html|Feeding the Cloud: Proper indentation of Javascript files using js2-mode in emacs]]
 	* [[http://www.masteringemacs.org/articles/2012/05/29/compiling-running-scripts-emacs/|Compiling and running scripts in Emacs ]]
 
-===== 4. Vim =====
+===== Vim =====
 * Why Vim
 	* [[http://users.softlab.ntua.gr/~ttsiod/vim.html|Why I use Vim]] ****
 	* [[http://terminally-incoherent.com/blog/2012/03/21/why-vim|Why Vim]]
 	* [[http://www.oschina.net/news/25882/why-they-are-using-vi|为什么这些死脑筋们在用 VI ? - 开源中国社区]]
 	* [[http://robots.thoughtbot.com/post/13164810557/the-vim-learning-curve-is-a-myth|The Vim Learning Curve Is a Myth]]
-	* [[http://mikethecoder.com/post/22121712651/from-vim-to-emacs-evil-mode-and-back-again|From Vim to Emacs + Evil mode and back again]]
 * Tips
 	* [[http://bit-integrity.com/2011/08/vim-syntax-highlighting-with-less.html|less with syntax highlighting]]
 	* [[http://michael.peopleofhonoronly.com/vim|Vim Cheat Sheat for Programmers by Michael Pohoreski]]
@@ -144,16 +156,17 @@ Wiki-Format: zim 0.4
 * [[http://blog.csdn.net/wooin/article/details/1858917|手把手教你把Vim改装成一个IDE编程环境(图文) - 吴垠的专栏 - 博客频道 - CSDN.NET]]
 * [[http://blog.csdn.net/yangyang_gnu/article/details/6642271|拼装的艺术：vim之IDE进化实录 - a byte of free - 博客频道 - CSDN.NET]]
 
-===== 5. Misc =====
+===== Misc =====
 
-==== 5.1 Programming ====
+==== Programming ====
 	* [[http://coolshell.cn/articles/7526.html|Lisp的永恒之道 ]]
 	* [[http://agiliq.com/blog/2012/06/understanding-args-and-kwargs/|Understanding '*', '*args', '**' and '**kwargs' - Agiliq Blog ]]
 	* [[http://indiegamr.com/cut-your-data-exchange-traffic-by-up-to-50-with-one-line-of-code-msgpack-vs-json/|MsgPack vs. JSON: Cut your client-server exchange traffic by 50% with one line of code ]]
 	* [[http://www.cpprocks.com/cpp-ruby-coffeescript-language-complexity/|C++, Ruby, CoffeeScript: a visual comparison of language complexity ]]
 	* [[http://www.aqee.net/why-every-programmer-should-learn-python-or-ruby/|每个程序员都应该学习使用Python或Ruby]]
+* 
 
-==== 5.2 Linux ====
+==== Linux ====
 
 	* [[http://linuxaria.com/recensioni/etckeeper-keep-under-control-your-configuration-files?lang=en|Etckeeper – Keep under control your configuration files !]]
 	* [[http://www.howtogeek.com/114812/5-cool-things-you-can-do-with-an-ssh-server/|5 Cool Things You Can Do With an SSH Server - How-To Geek]]
@@ -165,21 +178,24 @@ Wiki-Format: zim 0.4
 	* [[http://www.linuxgazette.net/issue55/henderson.html|How To Make A Hotkey On The Linux Console LG #55]]
 	* [[http://segfault.in/2010/07/pdf-manipulations-and-conversions-from-linux-command-prompt|segfault.in » PDF Manipulations And Conversions From Linux Command Prompt]]
 	* [[http://www.serverwatch.com/server-tutorials/securing-a-vnc-server-on-linux-with-ssh.html|Securing a VNC Server on Linux with SSH]]
+* 
 
-==== 5.3 Android ====
+==== Android ====
 
 	* [[http://www.howtogeek.com/97920/how-to-run-android-apps-on-your-desktop-with-bluestacks/|How to Run Android Apps on Your Desktop the Easy Way - How-To Geek]]
 	* [[http://topic.csdn.net/u/20110728/09/FFA92F50-5899-4505-B5BF-B4F48223CCEA.html|有多少人觉得模拟器太慢？有多少人试过用Android-x86来做应用开发啊？ - 移动平台 / Android]]
 	* [[http://webtablab.com/mobile/best-free-android-games/|25 Most Popular Free Android Games You Would Love Playing]]
+* 
 
-==== 5.4 Wine ====
+==== Wine ====
 
 	* [[https://launchpad.net/~ubuntu-wine|Ubuntu Wine Team in Launchpad]]
 	* [[http://www.unixmen.com/vineyard-an-application-to-integrate-wine-into-ubuntugnome/|VINEYARD- An application to integrate wine into Ubuntu ]]
 	* [[http://feeding.cloud.geek.nz/2011/03/installing-fallout-3-on-ubuntu-lucid.html|Feeding the Cloud: Installing Fallout 3 on Ubuntu Lucid]]
 	* [[http://wonyen.net/bbs/topic.aspx?id=8430|文逸网 ::::帖子标题: 阅读chm的另一解决方案（wine+hh.exe）]]
+* 
 
-==== 5.5 Misc ====
+==== Misc ====
 
 	* [[http://playpcesor.blogspot.com/2010/02/docfetcher.html|DocFetcher 快找文件檔案內文的輕巧桌面搜尋器，支援中文索引 ]]
 	* [[http://playpcesor.blogspot.com/2012/05/tiggit-steam300.html|Tiggit 獨立遊戲專屬的Steam，下載安裝300多款免費遊戲 ]]

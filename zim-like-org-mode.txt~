@@ -1,0 +1,116 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-07-01T16:06:15+08:00
+
+====== zim-like-org-mode ======
+Created 星期日 01 七月 2012
+
+Zim: 普通人的org-mode
+
+
+* Zim - 普通人的Org-mode 
+
+上次看见[[http://www.cnblogs.com/bamanzi/archive/2012/06/24/note-taking-tool-cherrytree.html|CherryTree]]，
+我忍不住又上[[http://alternativeto.net/|AlternativeTo]] 网站去看看有没有[[http://alternativeto.net/software/cherrytree/?platform=linux|其它类似的软件]]
+笔记软件还有Zim, wikidPad，KeepNote和NoteCase，其中Zim的受欢迎程度还挺高的，有88票(CherryTree只有
+16票)，于是下载下来试试。
+
+[[file:globe.png]] *http://www.zim-wiki.org/index.html|Zim%20-%20A%20Desktop%20Wiki*
+
+没试多久，我就觉得这个软件还真是不错，跟CherryTree各有千秋:
+
+** 特点
+- *富文本*: 跟CherryTree差不多，支持粗体/斜体/下划线/删除线、等宽/上标/下标、有序/无序列表/checkbox列
+  表、1-5级标题，支持插入图片、链接，不过不支持设置字体颜色、中间对齐/右对齐；
+
+- *所见即所得*: 虽然定位是desktop wiki，但跟http://wikidpad.sourceforge.net/|WikidPad 不一样的是，它并不要求你记忆http://www.zim-wiki.org/manual/Help/Wiki_Syntax.html|%E9%82%A3%E4%BA%9Bwiki%E8%AF%AD%E6%B3%95 ，而是可
+  以所见即所得地进行编辑（其实也可以输入wiki语法，然后用Ctrl-R强制Zim重新解析并显示）
+
+- *附件*: 支持给每个页面添加附件（插入图片时可以选择是否拷贝到附件目录）
+
+- *简单、清爽的存储方式*: 存储采用纯文本(采用dokuwiki语法)，每个页面一个文件，导航数上面的枝节点（叫
+  做namespace）变为一个目录，每个页面附件也存放在各自的目录里（跟页面同名）——这就使得没有Zim时也可以
+  简单地查看/修改内容了，也可以很方便地用其它工具来导入/导出（包括格式转换）
+
+- *导出*: 它的导出功能很强大，因为http://www.zim-wiki.org/manual/Help/Templates.html|%E5%8F%AF%E4%BB%A5%E5%AE%9A%E5%88%B6%E6%A8%A1%E6%9D%BF ，比如将笔记本导出为HTML时，缺省就提供了独立索引页
+  (Default)、每个页面有索引(Default_with_index)、演示(Presentation)、幻灯片(SlideShow S5)等多种模板；
+  还可以导出为Latex和Markdown格式；
+
+- *带一个Web Server*: 这是一个很酷的功能，从菜单上点一下就可以启动一个Web Server，可以通过浏览器当前笔
+  记本，zim自动提供转换后的html页面
+
+- 其它功能
+  - 可以插入Ditaa, GNU R, Gnuplot，GraphViz，Latex公式
+  - 有版本控制插件，可以借用git/hg/bzr给每个页面提供版本控制功能
+
+** 用途
+
+- *记笔记*: 除了所见即所得的编辑功能，还提供了两个插件:
+  - http://www.zim-wiki.org/manual/Plugins/Quick_Note.html|%E5%BF%AB%E9%80%9F%E7%AC%94%E8%AE%B0(Quick%20Note) 可以快速输入一段内容变成一则新的笔记（同时还增强了zim的命令行参数，使得可以在浏览器等地
+    方通过命令行快速创建一则笔记）；
+  - http://www.zim-wiki.org/manual/Plugins/Insert_Screenshot.html|%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(Insert%20Screenshot): 可以即时插入截图；
+  - 另外，http://www.zim-wiki.org/extras.html|%E8%BF%99%E9%87%8C 还有一个Firefox扩展zimcapture用来跟Quick Note配合剪辑网页到Zim
+
+- *写文档*: 尤其适合写多章节的说明文档，然后导出为markdown/html，或者通过latex生成pdf。Zim自己的帮助
+  和http://www.zim-wiki.org/|%E9%A1%B9%E7%9B%AE%E7%BD%91%E7%AB%99 （页面右下角有: This website was written in Zim !)都是用Zim写的；
+
+- *写演示胶片*: 导出时选择Presnetation或者SlideShow S5就可以啦；
+
+- *记日记*: http://www.zim-wiki.org/manual/Plugins/Calendar.html|%E6%97%A5%E5%8E%86%E6%8F%92%E4%BB%B6(Calendar) 可以显示一个日历，选择相应日期就跳转到当天的笔记，也可以在主界面用快捷键Alt-D快
+  速跳转/创建今天的笔记；
+
+- *GTD*: http://www.zim-wiki.org/manual/Plugins/Task_List.html|%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8%E6%8F%92%E4%BB%B6(Task%20List) 可以帮助你跟踪待办事项：带有TODO和FIXME标签(http://www.zim-wiki.org/manual/Help/Tags.html|Tags)%E7%9A%84%E9%A1%B5%E9%9D%A2%E4%BC%9A%E5%8F%98%E6%88%90%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E9%A1%B9%EF%BC%9B%E6%9B%B4%E7%BB%86%E8%8A%82
+  的待办事宜可以用带有复选框(checkbox)的列表来跟踪（用缩进来代表子项目）
+
+参考: Zim自己的文档里有一篇http://www.zim-wiki.org/manual/Usage.html|Usage 描述了各种应用场景
+  - Topic based notebook
+  - Organizer
+  - Document Editor
+  - Journal
+  - Collection Manager
+
+
+** 缺点
+  - 不支持表格；
+  - 不能直接从HTML粘贴，现在粘贴时只有纯文本会保留下来，格式信息、链接等都会丢失（这一点不如CherryTree）;
+  - 不支持页面内的anchor。这个bug报告单里面有讨论:https://bugs.launchpad.net/zim/+bug/380844|Link%20to%20anchors%20within%20pages ，对应的代码分支也在去
+    年底完成了开发 https://code.launchpad.net/~fenryxo/zim/anchors ， 但不清楚为什么没有合入主干；
+  - 只能选择导出整个笔记本或者单独一个页面，不能选择一个节点导出整棵树
+
+
+** 总结: 普通人的org-mode
+所以，这完全是个普通人的org-mode了：所见即所得地编辑，也能干很多事情。
+
+不过，对于我自己，我还是会继续在Emacs上用org-mode，因为各种熟悉，各种定制，各种小功能（比如导出为INFOJS、Markdown...）
+
+** 参考
+  - http://charlie137-2.blogspot.com/2011/02/from-org-mode-to-zim.html|Charlie's%20Second%20Blog:%20from%20org-mode%20to%20zim
+  - https://gist.github.com/879137|Convert%20Emacs%20org-mode%20formatted%20text%20to%20Dokuwiki%20formatted%20one
+  - http://zim-wiki.org/wiki/doku.php?id=script_to_convert_notecase_notes&DokuWiki=436d1422e0013cf4c26799a71047220e|Script%20to%20convert%20NoteCase%20notes%20(to%20zim)
+  - [[http://is.gd/DtDNgo][Linux%E4%B8%8B%E4%B8%AA%E4%BA%BAWiki%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Zim%E7%9A%84%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%20| Liuyix]]
+
+** 补充说明
+  - 文章里面提到的插件都不用单独安装，已经包含在发布版内了，只要在 编辑->首选项->插件 里面启用就可以了。
+  - 翻到小众的介绍（http://www.appinn.com/zim-wiki/ 三年前的)，以前Zim是用perl+gtk来写的，那时有不少
+    中文方面的问题（乱码、中文路径等）。据Chagne Log，是v0.42版本后才改用python来写的，我这边基本上没
+    有碰到中文方面的问题。
+
+# -*- encoding:utf-8 -*-
+
+
+纯文本保存每个节点（采用wiki语法)，界面上算是一个wiki的WYSWYG编辑器（其实也可以输入wiki语法，Zim会自动在Enter键后转换）
+
+优点:
+	* 支持对节点添加附件
+	* 可启动一个Web服务器，将当前笔记本的内容变成一个网站
+	* 导出为HTML时有Presentation和S5模版，可以用来写演示文档
+	* 跟WikidPad等wiki类软件不一样的地方时，Zim在格式上是所见即所得的，你不需要记录烦人的wiki语法
+	* 采用纯文本保存节点内容，手头没有Zim时，可以用其它编辑器打开，浏览/编辑内容都没有太大问题
+
+缺点:
+	* 插入图片时只是添加了一个链接，没有将图片文件拷贝到笔记本目录内的选项，这使得笔记本不是自包含的
+	* 不支持表格
+	* 不支持代码语法高亮
+
+
+http://zim-wiki.org/manual/Usage.html

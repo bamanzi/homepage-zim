@@ -11,31 +11,31 @@ Created 星期六 14 七月 2012
 开始研究Emacs上的screen/perspective类扩展，其实我还没弄清楚我想要的是个啥样的东西，不过persp-mode
 
 ===== ## [workgroups](https://github.com/tlh/workgroups.el ) ## =====
-  * 可记录窗口配置(叫做workgroup, 包括了其当前buffer)，并在多套workgroup之间切换。
-  * 有persistence支持
-  * 可以按buffer切换到其所属的wg，但仅限于该wg当前的窗口中显示了该buffer，未显示的buffer不具有这个能力（也就是说，buffer与wg之间没有perspective.el里面那种强联系)
-  * 可将当前窗口配置设置为本wg的基础设置(wg-update-workgroup)，在以后revert回来。
-  * 各frame之间wg的working config独立的，但每个wg的base config是共享的(文档描述如此，但实验不对?)
+* 可记录窗口配置(叫做workgroup, 包括了其当前buffer)，并在多套workgroup之间切换。
+* 有persistence支持
+* 可以按buffer切换到其所属的wg，但仅限于该wg当前的窗口中显示了该buffer，未显示的buffer不具有这个能力（也就是说，buffer与wg之间没有perspective.el里面那种强联系)
+* 可将当前窗口配置设置为本wg的基础设置(wg-update-workgroup)，在以后revert回来。
+* 各frame之间wg的working config独立的，但每个wg的base config是共享的(文档描述如此，但实验不对?)
 
 ===== ## [perspective](https://github.com/nex3/perspective-el ) ## =====
-  * 可以将buffer添加到某个perspective里面去
-  * 各frame之间persp是独立的，但可以import某个persp过去使用
-  * http://emacsrookie.com/2011/09/25/workspaces/
+* 可以将buffer添加到某个perspective里面去
+* 各frame之间persp是独立的，但可以import某个persp过去使用
+* http://emacsrookie.com/2011/09/25/workspaces/
 
 ===== ## elscreen/el-screen/escreen ## =====
-  * elscreen用header-line切换，挺方便的，但跟tabbar冲突
-  * el-screen依赖也挺多，其中el-kit有10多个文件
+* elscreen用header-line切换，挺方便的，但跟tabbar冲突
+* el-screen依赖也挺多，其中el-kit有10多个文件
 		
 
 ===== ## [windows-mode](http://www.emacswiki.org/emacs/WindowsMode ) ## =====
-  *  winring (?)
+* winring (?)
 
 ===== ## [window-layout](https://github.com/kiwanami/emacs-window-layout/ ) ## =====
-  * 创建一个或多个window layout，每个窗口有名字，可根据名字操作窗口(show/hide/toggle/select/maximize/refresh)，并将buffer显示到窗口上——layout被破坏了怎么办? 没有见到处理。另外也没有见到切换layout的相应支持。无persistence支持。
+* 创建一个或多个window layout，每个窗口有名字，可根据名字操作窗口(show/hide/toggle/select/maximize/refresh)，并将buffer显示到窗口上——layout被破坏了怎么办? 没有见到处理。另外也没有见到切换layout的相应支持。无persistence支持。
 	
 
 ===== ## frame-bufs.el ## =====
-  * [emacs] 用frame-bufs.el[实现了一直想要的类似perspective功能](https://gist.github.com/2250340 )。 相比之前研究的perspective.el，现在直接用frame绑定buffer，不同的frame即是不同的透视图，要简单直观得多。perspective.el 定义的透视图在不同的frame之间不是共享的，所以比较适合单一frame的情况 [2012-03-30 17:44:42]	
+* [emacs] 用frame-bufs.el[实现了一直想要的类似perspective功能](https://gist.github.com/2250340 )。 相比之前研究的perspective.el，现在直接用frame绑定buffer，不同的frame即是不同的透视图，要简单直观得多。perspective.el 定义的透视图在不同的frame之间不是共享的，所以比较适合单一frame的情况 [2012-03-30 17:44:42]	
 
 
 
@@ -43,11 +43,11 @@ Created 星期六 14 七月 2012
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 817. [emacs][RIL] Putting it in Perspective : Nex3 - http://nex-3.com/posts/72-putting-it-in-perspective [2011-05-28 12:02:21]
-    1129. [emacs] Putting it in Perspective : http://nex-3.com/posts/72-putting-it-in-perspective 跟tabbar不同的是，tabbar只切换当前window的buffer，perspective切换整个frame内的window和buffer [2011-09-27 08:45:45]
-    1109. [Emacs] workgroups-el: manage window layout & configs https://github.com/tlh/workgroups.el [2011-09-22 07:30:35]
-    1131. [emacs] 不过用了一会儿觉得这个perspective跟tabbar有点冲突啊（不是功能上的冲突，是用户体验上的），得想法改改tabbar的group方法，将两者协调起来 [2011-09-27 08:46:51]
-    1132. [emacs] 这个perspective功能上跟elscreen有点象(可能没它强，毕竟elscreen是个大包，有好多个文件)，只不过elscreen跟tabbar抢header-line [2011-09-27 09:02:48]
-    1133. [emacs] 多窗口布局管理，我应该用哪个呢？ elscreen, escreen, perspective, workgroups [2011-09-29 18:25:18]
-    1134. [emacs] 多窗口配置方面又发现了两个新东西 el-screen (不是elscreen) https://github.com/medikoo/el-screen 和 windows-mode http://www.emacswiki.org/emacs/WindowsMode 不过我发现我的需求目前用自带的register可以搞定 [2011-11-15 15:08:23]
-    1135. [emacs] 用frame-bufs.el实现了一直想要的类似perspective功能 https://gist.github.com/2250340  相比之前研究的perspective.el，现在直接用frame绑定buffer，不同的frame即是不同的透视图，要简单直观得多。perspective.el 定义的透视图在不同的frame之间不是共享的，所以比较适合单一frame的情况 [2012-03-30 17:44:42]
-   1406. workgroups for windows ( emacs layouts) | Open Sauce http://splash-of-open-sauce.blogspot.com/2010/09/workgroups-for-windows-emacs-layouts.html [2012-01-21 16:24:48]
+1129. [emacs] Putting it in Perspective : http://nex-3.com/posts/72-putting-it-in-perspective 跟tabbar不同的是，tabbar只切换当前window的buffer，perspective切换整个frame内的window和buffer [2011-09-27 08:45:45]
+1130. [Emacs] workgroups-el: manage window layout & configs https://github.com/tlh/workgroups.el [2011-09-22 07:30:35]
+1131. [emacs] 不过用了一会儿觉得这个perspective跟tabbar有点冲突啊（不是功能上的冲突，是用户体验上的），得想法改改tabbar的group方法，将两者协调起来 [2011-09-27 08:46:51]
+1132. [emacs] 这个perspective功能上跟elscreen有点象(可能没它强，毕竟elscreen是个大包，有好多个文件)，只不过elscreen跟tabbar抢header-line [2011-09-27 09:02:48]
+1133. [emacs] 多窗口布局管理，我应该用哪个呢？ elscreen, escreen, perspective, workgroups [2011-09-29 18:25:18]
+1134. [emacs] 多窗口配置方面又发现了两个新东西 el-screen (不是elscreen) https://github.com/medikoo/el-screen 和 windows-mode http://www.emacswiki.org/emacs/WindowsMode 不过我发现我的需求目前用自带的register可以搞定 [2011-11-15 15:08:23]
+1135. [emacs] 用frame-bufs.el实现了一直想要的类似perspective功能 https://gist.github.com/2250340  相比之前研究的perspective.el，现在直接用frame绑定buffer，不同的frame即是不同的透视图，要简单直观得多。perspective.el 定义的透视图在不同的frame之间不是共享的，所以比较适合单一frame的情况 [2012-03-30 17:44:42]
+818. workgroups for windows ( emacs layouts) | Open Sauce http://splash-of-open-sauce.blogspot.com/2010/09/workgroups-for-windows-emacs-layouts.html [2012-01-21 16:24:48]

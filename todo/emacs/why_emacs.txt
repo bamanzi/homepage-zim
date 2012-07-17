@@ -8,21 +8,11 @@ Created 星期日 24 六月 2012
 
 @emacs
 
-===== 严肃篇 =====
-
 首先，界定一下问题领域，说说场景、范围：
-1. 我是个三脚猫，兴趣比较广，尤其在业余，喜欢hacking一些开源的东西（或者是仅仅有源代码），主要是些
-python脚本、Firefox扩展、delphi程序、autohotkey脚本，涉及到的语言有python, xml/xul, javascript,
-dtd, pascal等; 又因为我用Linux比较多，会跟一些shell脚本、perl脚本打交道，所以需要的是跨平台的、
-支持多语言的编辑器;
-2. 而工作上，我现在已经不再进行大量、系统性地编码了（好像写PPT比较多:-); 但常常看一些开源的代码，有
-C/C++的，有Python的，有Java的，还有PHP的。 所以这里我把这个问题界定在”编辑器“领域，而不是拿Emacs
-来跟那些庞大的IDE对比，Emacs干这些也的确有些吃力（顺便吐槽一下Java: 这是一个及其以来IDE的语言：
-一个又一个的接口，一个又一个的类，一个又一个的包，一个又一个的jar文件，离开了IDE连阅读代码都很困
-难，这篇 [[http://almaer.com/blog/luke-and-darth-talk-past-each-other-on-language-debate|Luke and Darth talk past each other on language debate on Dion Almaer's Blog]] 里面的漫画
-正是我想说的）。
+1. 我是个三脚猫，兴趣比较广，尤其在业余，喜欢hacking一些开源的东西（或者是仅仅有源代码），主要是些python脚本、Firefox扩展、delphi程序、autohotkey脚本，涉及到的语言有python, xml/xul, javascript, dtd, pascal等; 又因为我用Linux比较多，会跟一些shell脚本、perl脚本打交道，所以需要的是跨平台的、支持多语言的编辑器;
+2. 而工作上，我现在已经不再进行大量、系统性地编码了（好像写PPT比较多:-); 但常常看一些开源的代码，有C/C++的，有Python的，有Java的，还有PHP的。 所以这里我把这个问题界定在”编辑器“领域，而不是拿Emacs来跟那些庞大的IDE对比，Emacs干这些也的确有些吃力（顺便吐槽一下Java: 这是一个及其以来IDE的语言：一个又一个的接口，一个又一个的类，一个又一个的包，一个又一个的jar文件，离开了IDE连阅读代码都很困难，这篇 [[http://almaer.com/blog/luke-and-darth-talk-past-each-other-on-language-debate|Luke and Darth talk past each other on language debate on Dion Almaer's Blog]] 里面的漫画正是我想说的）。
 
-==== Why Emacs ====
+==== 1. Why Emacs ====
 
 === universal editor ===
 
@@ -33,10 +23,9 @@ C/C++的，有Python的，有Java的，还有PHP的。 所以这里我把这个�
 看到相应的说明，要转到对应实现函数也很方便; 
 
 
-==== 一些不太爽的地方 ====
+==== 2. 一些不太爽的地方 ====
 
 === 快捷键 ===
-
 
 
 === 没有工程概念 ===
@@ -67,33 +56,31 @@ emacs的缩进设置》]]）。
 Emacs发布包里面集成了不少跟编辑文档/代码没有关系的功能，比如irc和gnus，这些功能作为扩展提供到没有什
 么问题，但作为官方发布包的一部分就有点太怪异了。
 
-==== Emacs vs Vim ====
+==== 3. Emacs vs Vim ====
 
 === shell / repl / comint ===
 
-'''
-  * [[http://www.thurn.ca/why_i_switched_from_vim_to_emacs|Why I switched from vim to emacs]]
-  * [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim]]
-  * [[http://www.d.umn.edu/~tcolburn/emacs/emacs-vs-vi.html|Why Should You Use GNU Emacs Instead of Vi?]]
-  * [[http://www.9wy.net/?p=804|九王爷的府邸 » Blog Archive » VIM和EMACS选择指南]]
-'''
 
+==== 4. References: ====
 
-==== References: ====
+* [[http://www.thurn.ca/why_i_switched_from_vim_to_emacs|Why I switched from vim to emacs]]
+* [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim]]
+* [[http://www.d.umn.edu/~tcolburn/emacs/emacs-vs-vi.html|Why Should You Use GNU Emacs Instead of Vi?]]
+* [[http://www.9wy.net/?p=804|九王爷的府邸 » Blog Archive » VIM和EMACS选择指南]]
 * [[https://soulogic.com/archives/420|为什么要用 Emacs/Vim，而不是任何其他编辑器]]
 * [[http://gnuvince.wordpress.com/2012/02/19/why-i-still-use-emacs/|Why I Still Use Emacs]]
-	* [[http://www.oschina.net/news/25874/why-i-am-still-using-emacs|为什么我还在使用 Emacs ？]]
+	* 中文翻译: [[http://www.oschina.net/news/25874/why-i-am-still-using-emacs|为什么我还在使用 Emacs ？]]
 * [[http://www.thurn.ca/why_i_switched_from_vim_to_emacs|Why I switched from vim to emacs]]
-
-=== misc ===
-* [[http://users.softlab.ntua.gr/~ttsiod/vim.html|Why I use VIM]]
 * [[http://snarfed.org/why_i_run_shells_inside_emacs|why I run shells inside Emacs]]
 * [[http://gnuvince.wordpress.com/2007/02/24/emacs-and-vim/|Emacs and Vim]]
 * [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim ]]
 * [[http://www.d.umn.edu/~tcolburn/emacs/emacs-vs-vi.html|Why Should You Use GNU Emacs Instead of Vi?]]
+* [[http://irreal.org/blog/?p=651|What Makes Emacs So Great?]]
+
+==== 4.1 Vim ====
+* [[http://users.softlab.ntua.gr/~ttsiod/vim.html|Why I use VIM]]
 * [[https://soulogic.com/archives/420|为什么要用 Emacs/Vim，而不是任何其他编辑器]]
 * [[http://www.oschina.net/news/25882/why-they-are-using-vi|为什么这些死脑筋们在用 VI ? - 开源中国社区]]
-* [[http://irreal.org/blog/?p=651|What Makes Emacs So Great?]]
 * [[http://vim.wikia.com/wiki/Capture_ex_command_output|Capture ex command output - Vim Tips Wiki]]
 * [[http://www.johndcook.com/blog/2011/12/30/advantages-of-everything-is-text/|Advantages of everything-is-text]]
 
