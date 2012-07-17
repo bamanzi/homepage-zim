@@ -1,0 +1,120 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+#+TITLE: Why Emacs
+
+====== why emacs ======
+Created 星期日 24 六月 2012
+
+@emacs
+
+===== 严肃篇 =====
+
+首先，界定一下问题领域，说说场景、范围：
+1. 我是个三脚猫，兴趣比较广，尤其在业余，喜欢hacking一些开源的东西（或者是仅仅有源代码），主要是些
+python脚本、Firefox扩展、delphi程序、autohotkey脚本，涉及到的语言有python, xml/xul, javascript,
+dtd, pascal等; 又因为我用Linux比较多，会跟一些shell脚本、perl脚本打交道，所以需要的是跨平台的、
+支持多语言的编辑器;
+2. 而工作上，我现在已经不再进行大量、系统性地编码了（好像写PPT比较多:-); 但常常看一些开源的代码，有
+C/C++的，有Python的，有Java的，还有PHP的。 所以这里我把这个问题界定在”编辑器“领域，而不是拿Emacs
+来跟那些庞大的IDE对比，Emacs干这些也的确有些吃力（顺便吐槽一下Java: 这是一个及其以来IDE的语言：
+一个又一个的接口，一个又一个的类，一个又一个的包，一个又一个的jar文件，离开了IDE连阅读代码都很困
+难，这篇 [[http://almaer.com/blog/luke-and-darth-talk-past-each-other-on-language-debate|Luke and Darth talk past each other on language debate on Dion Almaer's Blog]] 里面的漫画
+正是我想说的）。
+
+==== Why Emacs ====
+
+=== universal editor ===
+
+=== 可扩展性 ===
+
+=== 可读性 ===
+* Emacs的包、函数和参数都是自注释的，你用describe-function/describe-variable/describe-package都可以
+看到相应的说明，要转到对应实现函数也很方便; 
+
+
+==== 一些不太爽的地方 ====
+
+=== 快捷键 ===
+
+
+
+=== 没有工程概念 ===
+
+=== 窗口管理缺省对工具窗口的单独考虑 ===
+Emacs里面没有"工具窗口"的说法，而它的display-buffer函数会根据自己的一堆规则来挑应该在哪个窗口现实某
+个buffer，但很多时候会
+
+ECB可以很好地区分”编辑器窗口“和”工具窗口“，
+
+=== 缩进 ===
+关于 **缩进** 的第一个问题是概念问题: Emacs里面的 *indent* 有时表示的是我们通常理解的缩进功能（比如
+[[http://www.gnu.org/software/emacs/manual/html_node/elisp/Region-Indent.html#index-indent_002drigidly-2665|indent-rigidly]] 这个命令），而更多的时候是类似其它编辑器里面的代码格式化(format code)概念： 根据语法
+确定每行的缩进，并进行重排（比如 [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Mode_002dSpecific-Indent.html#index-indent_002dfor_002dtab_002dcommand-2660|indent-for-tab-command]], [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Region-Indent.html#index-indent_002dregion-2663|indent-region]])。
+
+第二个问题是配置的复杂性: 应该说根据语法自动判断缩进的多少是个不错的主意，但Emacs里面涉及缩进的设置
+也太复杂了，尤其是与c-style相关的设置（参见[[http://www.emacswiki.org/emacs/IndentingC|EmacsWiki: Indenting C]]);
+
+与这个复杂性相对应的是它同时没有提供一种类似其它“现代编辑器”里面的简单缩进方式(参见我前面的[[http://www.cnblogs.com/bamanzi/archive/2011/05/28/emacs-indent-again.html][%E3%80%8A%E5%86%8D%E8%B0%88
+emacs的缩进设置》]]）。
+
+而碰到Xah Lee的[[http://xahlee.org/mswin/emacs_autohotkey_mode.html|xahk-mode]] ，它的实现也让用户采用了c风格的缩进，但AutoHotKey这个语言又跟C语言的语法有
+不小的差异，直接就让用户傻眼了: 很难通过c-set-style来配置好，也没有一个简单的缩进方式。
+
+不过这个问题我基本上找到对策了。
+
+=== irc / gnus ===
+Emacs发布包里面集成了不少跟编辑文档/代码没有关系的功能，比如irc和gnus，这些功能作为扩展提供到没有什
+么问题，但作为官方发布包的一部分就有点太怪异了。
+
+==== Emacs vs Vim ====
+
+=== shell / repl / comint ===
+
+'''
+  * [[http://www.thurn.ca/why_i_switched_from_vim_to_emacs|Why I switched from vim to emacs]]
+  * [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim]]
+  * [[http://www.d.umn.edu/~tcolburn/emacs/emacs-vs-vi.html|Why Should You Use GNU Emacs Instead of Vi?]]
+  * [[http://www.9wy.net/?p=804|九王爷的府邸 » Blog Archive » VIM和EMACS选择指南]]
+'''
+
+
+==== References: ====
+* [[https://soulogic.com/archives/420|为什么要用 Emacs/Vim，而不是任何其他编辑器]]
+* [[http://gnuvince.wordpress.com/2012/02/19/why-i-still-use-emacs/|Why I Still Use Emacs]]
+	* [[http://www.oschina.net/news/25874/why-i-am-still-using-emacs|为什么我还在使用 Emacs ？]]
+* [[http://www.thurn.ca/why_i_switched_from_vim_to_emacs|Why I switched from vim to emacs]]
+
+=== misc ===
+* [[http://users.softlab.ntua.gr/~ttsiod/vim.html|Why I use VIM]]
+* [[http://snarfed.org/why_i_run_shells_inside_emacs|why I run shells inside Emacs]]
+* [[http://gnuvince.wordpress.com/2007/02/24/emacs-and-vim/|Emacs and Vim]]
+* [[http://pseudofish.com/blog/2011/11/25/emacs-or-vim/|Emacs or Vim ]]
+* [[http://www.d.umn.edu/~tcolburn/emacs/emacs-vs-vi.html|Why Should You Use GNU Emacs Instead of Vi?]]
+* [[https://soulogic.com/archives/420|为什么要用 Emacs/Vim，而不是任何其他编辑器]]
+* [[http://www.oschina.net/news/25882/why-they-are-using-vi|为什么这些死脑筋们在用 VI ? - 开源中国社区]]
+* [[http://irreal.org/blog/?p=651|What Makes Emacs So Great?]]
+* [[http://vim.wikia.com/wiki/Capture_ex_command_output|Capture ex command output - Vim Tips Wiki]]
+* [[http://www.johndcook.com/blog/2011/12/30/advantages-of-everything-is-text/|Advantages of everything-is-text]]
+
+
+
+
+===== Footnotes =====
+[fn:1] Emacs缺省支持不高亮显示的选中区，mark点(上次(显式或隐式)set-mark的位置)和当前point之间自然构成
+region。但transient-mark-mode（常简称tmm）打开后，就是“现代编辑器”的那种选中方式。cua-mode里面已经
+包含了这个设置，而且v23.1之后版本tmm也是缺省打开的。
+
+[fn:2] 这并不是说 hideshow/outlne跟code folding在名词上是对应的，而是目前Emacs实现代码折叠的两种方法
+而已（当然，也还有其它方法，比如semantic-tag-folding）
+
+[fn:3] 这两个也不是严格的名词对应，只是功能上的对应。如果你想要打开显示上的自动换行，应该使用的命令是
+toggle-truncate-lines或者visual-line-mode（后者是按单词边际换行）。如果你想要输入达到一定列（比如80）
+的时候就自动插入一个换行，应该使用的是auto-fill-mode。
+
+[fn:4] Emacs比较常用的是fringe，有左右fringe之分，left-fringe可用来显示代码折叠用的+/-号（比如
+hideshowvis([[http://www.google.com.hk/imgres?q%3Dhideshowvis&um%3D1&hl%3Dzh-CN&newwindow%3D1&safe%3Dstrict&sa%3DN&tbm%3Disch&tbnid%3D1mp0dDaQg3gW9M:&imgrefurl%3Dhttp://d.hatena.ne.jp/shive/20091130/1259599375&docid%3DOg_o_vGs9YbX2M&imgurl%3Dhttp://cdn-ak.f.st-hatena.com/images/fotolife/s/shive/20091201/20091201013653.png&w%3D398&h%3D573&ei%3Dw82kT5aOM8qTiALeo5jmAg&zoom%3D1&iact%3Dhc&vpx%3D559&vpy%3D113&dur%3D1198&hovh%3D269&hovw%3D187&tx%3D105&ty%3D134&sig%3D106247171128257750569&page%3D1&tbnh%3D137&tbnw%3D95&start%3D0&ndsp%3D20&ved%3D1t:429,r:3,s:0,i:75&biw%3D1280&bih%3D608|效果图]])和semantic-tag-folding([[http://www.google.com.hk/imgres?q%3Dsemantic-tag-folding%2Bsite:emacser.com&um%3D1&hl%3Dzh-CN&newwindow%3D1&safe%3Dstrict&tbm%3Disch&tbnid%3DdkGka79V6p-G4M:&imgrefurl%3Dhttp://emacser.com/cedet.htm&docid%3DCoRCFLVnoYxdeM&imgurl%3Dhttps://dea.googlecode.com/svn/trunk/screenshots/cedet/emacs-semantic-tag-folding.jpg&w%3D688&h%3D742&ei%3DKs-kT5zFH-WViALNxaXUAg&zoom%3D1&iact%3Dhc&vpx%3D104&vpy%3D156&dur%3D3687&hovh%3D233&hovw%3D216&tx%3D102&ty%3D104&sig%3D106247171128257750569&page%3D1&tbnh%3D114&tbnw%3D104&start%3D0&ndsp%3D21&ved%3D1t:429,r:0,s:0,i:76&biw%3D1280&bih%3D608|效果图]]), right-fringe可用来标识代码中的问题(比如
+flymaker+rfringe([[http://www.emacswiki.org/emacs/RFringe|效果图]])。其实Emacs里面也有margin，但很少用到，我见到的唯一例外是Emacs自带的linum-mode。
+
+
+# -*- fill-column: 100 -* 

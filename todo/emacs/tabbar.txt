@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-24T22:19:18+08:00
+
+====== tabbar ======
+Created 星期日 24 六月 2012
+
+===== #+TITLE: [Emacs] 调教tabbar =====
+
+==== ** ido-jump-to-tab/group ====
+
+==== ** tabbar-groups-function ====
+
+==== ** user-groups ====

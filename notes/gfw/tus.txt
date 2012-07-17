@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-07-14T17:39:36+08:00
+
+====== tus ======
+Created 星期六 14 七月 2012
+
+Register on this site for account
+https://www.tusurfer.com/tus/registerUser.do
+
+When you configure your TUS client use:
+* host name "remote.tusurfer.com"
+* port number "443"
+
+https://www.tusurfer.com/tus/download.do

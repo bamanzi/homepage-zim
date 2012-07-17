@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-24T22:21:28+08:00
+
+====== emacs-ancient-glossary ======
+Created 星期日 24 六月 2012
+
+@emacs 
+
+=== 一些旧的名词 ===
+
+| Emacs里的名词                     | "现代编辑器"里的名词        | 解释                                     |
+|-----------------------------------+-----------------------------+------------------------------------------|
+| kill-ring-save                    | copy                        | 复制                                     |
+| kill                              | cut                         | 剪切                                     |
+| yank                              | paste                       | 粘贴                                     |
+| region                            | selection                   | 被选中的区域[fn:1]                       |
+| mark                              | select                      | 选择一段文字                             |
+| fringe                            | gutter/margin               | 左右边栏[fn:4]                                 |
+| hideshow / outline                | code folding                | [fn:2]                                   |
+| coding system                     | encoding                    | 编码                                     |
+| truncate-lines / visual-line-mode | line wrapping               | 换行[fn:3]                               |
+| font-lock                         | syntax highlighting         |                                          |
+| imenu                             | function list / symbol list |                                          |
+| face                              | style                       | font+color+其它一些装饰                  |
+| Meta key                          | Alt key                     | 在现在的PC上，Alt键就是Emacs所说的meta键 |
+| window                            | panel                       |                                          |
+| frame                             | window                      |                                          |

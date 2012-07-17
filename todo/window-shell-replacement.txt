@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-27T22:26:24+08:00
+
+====== window-shell-replacement ======
+Created 星期三 27 六月 2012
+
+===== Shell =====
+
+
+==== 2.1 PyCmd ====
+
+2.2 TCC/LE
+
+2.3 

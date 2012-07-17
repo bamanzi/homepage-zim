@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-24T22:20:52+08:00
+
+====== some emacs comics ======
+Created 星期日 24 六月 2012
+
+@emacs 
+
+===== 搞笑篇 =====
+http://www.vim.org/images/0xbabaf000l.png
+
+http://hackles.org/strips/cartoon93.png
+
+#+CAPTION: Emacs user at work
+http://www.deviantart.com/download/195326745/emacs_user_at_work_by_earlcolour-d38aj2x.jpg
+(from [[http://earlcolour.deviantart.com/art/emacs-user-at-work-195326745|emacs user at work by ~EarlColour on deviantART]] )
+
+#+CAPTION: There's a shortcut for that
+http://ploum.net/images/emacs.png
+(from http://ploum.net/post/emacs )
+
+http://3.bp.blogspot.com/_dWpCGfU56J8/TAKgQ4kbnSI/AAAAAAAACH8/4edCH5C7emA/s1600/emacs+user.png
+(from http://binaryunit.blogspot.com/2010/05/emacs-users.html )
+
+http://www.userfriendly.org/cartoons/archives/07sep/uf010710.gif
+(from [[http://geeknizer.com/huge-collection-of-programming-cartoons/|Huge Collection of Programming Cartoons]] )
+
+http://en.tiraecol.net/modules/comic/cache/images/tiraecol_en-2.png
+(from [[http://en.tiraecol.net/modules/comic/comic.php?content_id=2&mode=flat&order=0|Vim vs. Emacs]] )
+
+#+CAPTION: Emacs的学习曲线
+http://bc.tech.coop/blog/images/curves.jpg
+
+http://hotoo.googlecode.com/svn-history/r297/vimwiki/img/vi-emacs2.jpg
+
+http://www.cs.bgu.ac.il/~orlovm/code/emacs/viman.gif
+
+http://www.hackles.org/strips/cartoon284.png
+
+http://www.hackles.org/strips/cartoon94.png
+
+http://www.hackles.org/strips/cartoon231.png
+(上面三幅来自: [[http://ubuntuforums.org/showthread.php?t=681119|Emacs v Vi(m) Humour - Ubuntu Forums]] )

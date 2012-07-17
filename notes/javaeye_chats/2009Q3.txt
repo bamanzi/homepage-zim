@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-07-14T20:17:40+08:00
+
+====== 2009Q3 ======
+Created 星期六 14 七月 2012
+
+* 修正peppy打开中文路径文件失败的问题: 将peppy/project/project_plugin.py #273 cls.dprint(str(last.path)) 改为 cls.dprint(u'%s' % (last.path)) 2009-09-30 
+* 通过pylint, jsl, xmllint, grep以及一些python脚本，我已经将scite打造成了方便、快捷的代码编辑器了，适合小工具开发 2009-09-28 
+* emacs的server-client模式: 在~/.emacs中添加(server-start)，以后永远用emacsclient --alternate-editor=emacs来打开文件。 另: 可用emacs -f server-start来启动服务器 2009-09-17 通过网页
+* locate32的主菜单中"File"会将选中文件的shell context菜单项也纳进去，一直觉得很不爽，今天下了个新的beta版，居然提供了一个选项关闭这个，爽。（在"工具->设置->高级->杂项"中选中"简单文件菜单"） 2009-09-11 通过网页
+* XAMPP, ease to install, includes Apache, MySQL, PHP, Perl, a FTP server and phpMyAdmin. http://sourceforge.net/projects/xampp/ 2009-09-08 
+* 笔记本刚启动一会儿，很多程序就不正常了，然后系统报找不到文件系统，崩溃了。重启动，机器点不亮了;( 用了三年了，估计也该修一回了 2009-09-06 通过网页
+* 在网上找《MySQL参考手册》的中文CHM版本，下载了好几份在目录和索引上都有问题（不全或者是英文）， 这个版本是好的 http://download.csdn.net/source/283797 2009-09-05 
+* dexpot这个虚拟多桌面工具挺不错的，http://www.dexpot.de 2009-09-05 通过网页
+* 港澳通行证 您的申请已初步受理(尚未审批)，受理编号为: 030800021970857 2009-09-04 通过网页
+* fpc邮件列表上询问手机上开发的越来越多了。也许除了C/C++，Java, Web/JS之外，我们没有太多其它的选择 fpc邮件列表上询问手机上开发的越来越多了 2009-08-24 
+* 又发现一个可Linux下的UML工具（除java外) bouml http://bouml.free.fr/ http://bouml.sourceforge.net/ 基于Qt, 而Debian已经收录 2009-08-24 
+* 看完了Torchwood Season 3: Children of the Earth http://www.youku.com/playlist_show/id_3537339.html 这种将政治家的丑恶嘴脸作为敌对面的写法，跟多年以前看的《冰人》倒是比较象 2009-08-23 
+* SMPlayer的字幕下载功能还真不错 :-) 2009-08-16 通过网页
+* Firebug Console API http://rikugun.javaeye.com/blog/242582 2009-08-12 
+* to buy: MySQL性能调优与架构设计 http://product.dangdang.com/product.aspx?product_id=20606388 2009-08-11 
+* 改用hypermail将mbox转换成一堆html来看, 不用开一个thunderbird了 http://hypermail.sourceforge.net 2009-07-28 
+* For detail info: http://wiki.lazarus.freepascal.org/Getting_Lazarus#Getting_Lazarus_from_our_Ubuntu_repository 2009-07-21 
+* Lazarus ubuntu packages: http://www.hu.freepascal.org/lazarus/dists ... 2009-07-21 
+* JavaEye的RSS改成 http://feeds.feedburner.com 的了，俺在公司访问不了 :-( 2009-07-21 
+* 备忘: 我的飞信号码 710926413 2009-07-11 
+* apt-get install -t testing foobar和apt-get install foobar/testing是一样的么? 2009-07-10 
+* 在网上搜到两个putty的配色方案(igvita-desert/igvita-light)，这些看起来非常清晰了 2009-07-07 
+* 在Windows下可用Apache自带的rotatelogs.exe来实现日志回滚，在网上搜"apache rotatelogs.exe"即可 2009-07-07 
+* Yeah! 试验free pascal的linux->win32交叉编译成功，使用起来相当简单fpc -Twin32 hello.pp 2009-07-06 
+* Brief终于升级了，可以在Firefox 3.5上正常工作了 2009-07-06

@@ -1,0 +1,94 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-07-14T20:24:54+08:00
+
+====== 2010Q3 ======
+Created 星期六 14 七月 2012
+
+
+
+* 决定弃用所有Firefox上的RSS/Feeds扩展，改用Thunderbird，效果好与不好，用一段再说吧 2010-09-30 
+* 热闹了，Jamie Zawinski又跳出来唱C++的反调 http://www.programmer.com.cn/4122/ 2010-09-29 
+* 建行需要还款： Oct. 5到期 1)8.19 230 2) 8.22 336 Nov. 5到期 1) 9.19 250 2) 9.21 146 2010-09-28 
+* 仔细比较了一下上#iphone 看#chm 的软件chmviewer，ichm和chmate，原来的直观感觉认为ichm最好是错误的，chmate才最强，不过这个要$9.99 太贵了，俺买个冰河世纪这么好玩的游戏才$2.99 2010-09-28 通过网页
+* view file (read-only) in existing #vim $ gvim --remote-tab-silent +:view %P%N 2010-09-25 
+* 新版texi2html下生成emacs.chm的方法: texi2html-1.82/texi2html --init ../chm.init --menu --header emacs.texi 注意chm.init里面关闭了header功能，需要修改一下 #tips 2010-09-25 
+* #RIL: http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/ 2010-09-25 
+* 为了方便在iphone上阅读，用texi2chm生成了Emacs Manual的CHM版。在Google Code上申请了一个项目来存放生成的文件 http://code.google.com/p/emacs-manual-chm 2010-09-24 
+* If you prefer to display the tags defined only in the current buffer, then you can set the 'Tlist_Show_One_File' to 1. #vim taglist 2010-09-20 
+* :copen [height] Open a window to show the current list of errors. #vim 2010-09-20 
+* ftp中主动模式(port)与被动模式(PASV) http://blog.chinaunix.net/u1/56156/showart_2269002.html 2010-09-19 
+* http://www.appinn.com/scrybe-gesture/ 2010-09-19 
+* http://karpolan.com/software/touchpad-blocker/ blocks accidental taps and clicks on touchpad when typing text on laptop keyboard 2010-09-19 
+* TODO: 比较一下FavMenu2, FolderMenu和Direct Folders(http://www.codesector.com/directfolders.php )，目前来说，我倾向于FolderMenu 2010-09-19 
+* 想发篇博文讲一下《亮剑》的真正结局，却被JavaEye博客系统认为包含敏感词拒绝了，还威胁说要记录我的IP。我艹，还是回blogger写吧，这里做个中转站 2010-09-17 
+* 在班车上看完了小说《亮剑》，电视剧丢掉了后面近1/4的结尾，那里面描述了丁伟、赵刚、李文龙的悲惨结局: 不是被迫害致死就是自杀 2010-09-17 
+* Gilouche Black这个visual style不错 #windows #themes 2010-09-16 
+* FolderMenu这个小工具比FavMenu要强不少 http://foldermenu.sf.net/ 不过我试图修改对Emacs的支持并添加对UltraExplorer的支持时，代码改完了不知道如何编译成exe，似乎有点诀窍没“领悟”到 2010-09-15 
+* 摸索了一下TVO(#517),VOoM(#2567),vimoutliner三个outline插件，还没总结出哪个好，不过都跟org-mode的方便性没法比 #vim 2010-09-13 
+* http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature #emacs 2010-09-13 通过网页
+* 周六老婆拿回来一台神舟笔记本，安装Debian testing(2010-06下载)/Ubuntu 8.04后均无法启动到Linux，换kubuntu 10.04.1结果因为kubuntu的原因无法从iso文件安装 2010-09-13 
+* Digg在挣扎,技术副总裁已卷铺盖走人 http://article.yeeyan.org/view/167444/133797 cassandra不靠谱? 2010-09-10 
+* fox splitter支持vimperator的部分按键(比如Ctrl-F/B, f, /, 但不支持n,d, gt)，但split panel几乎不支持 #firefox 2010-09-09 
+* blogspot.com又解封了，gfw这是在玩什么啊?? 2010-09-09 
+* http://www.google.com/reader/public/atom/user%2F02753487812100788291%2Fstate%2Fcom.google%2Fbroadcast 2010-09-01 
+* http://xianguo.com/service/sharerss/1728866 2010-09-01 
+* http://www.google.com/reader/public/atom/user%2F02753487812100788291%2Fstate%2Fcom.google%2Fstarred 2010-09-01 
+* Zoom Quiet在7月程序员上说他在用leo这个编辑器，思想是什么literate programming，到wikipedia上看了一下，原来是跟org-babel差不多的东西 2010-09-01 
+* 转: @bamanzi: 让ditto支持cmd, gvim等程序的粘贴方式 http://sourceforge.net/apps/trac/ditto-cp/wiki/Custom%20key%20strokes 2010-08-31 
+* GFW解封了wikia.com，#vim粉丝有福了 http://vim.wikia.com/ 2010-08-30 
+* Go语言认为继承是邪恶的 http://golang.org/doc/go_lang_faq.html#inheritance 2010-08-30 
+* 开始研究NoSQL数据库，根据项目需要，打算从Cassandra和MongoDB入手 2010-08-30 
+* ditto的配置界面太繁杂了，还是用clipx吧 2010-08-30 
+* 上周六玩了好一阵ELPA，将一些零散的el通过elpa管理起来，不过还是没搞定多文件的包 #emacs 2010-08-30 
+* 重装了libhide, 上次白苹果后禁用所有substrate addons导致的图标不能隐藏的问题消失了，这样categories可以很好地工作了，爽 #iphone 2010-08-30 
+* 让ditto支持cmd, gvim等程序的粘贴方式 http://xbeta.info/ditto.htm#h-6 2010-08-27 
+* http://www.stack.nl/~marcov/doc-chm.zip it contains rtl,fcl,lcl, fpdoc,ref,user,prog.chm 2010-08-24 
+* 在鲜果，你推荐的所有文章会生成一个分享页面：http://xianguo.com/service/sharerss/1728866 你的朋友可以直接访问这个页面，或订阅这个 Feed 来关注你推荐的好文章 2010-08-22 通过网页
+* vimperopera - vimperator-like keyboard configuration for opera http://my.opera.com/Blazeix/blog/index.dml/tag/vimperopera 2010-08-21 通过网页
+* vimperator的/可找出所有匹配的并高亮，FindAll扩展可以把所有匹配列出来(类似emacs的occur), HighlightAll扩展可以高亮所有选中/双击的文字(类似highlight-symbol) #firefox 2010-08-20 
+* 好东西: FencView.vim : Autodetect multiple encodings #vim http://vim.sourceforge.net/scripts/script.php?script_id=1708 2010-08-19 
+* 把俺用的一些复杂的vim扩展都用pathogen来管理了，比如vimcdoc, colorsamplepack, utl, outline, vimplate http://www.vim.org/scripts/download_script.php?src_id=12116 2010-08-19 
+* Edit and Note Toolbar这个扩展还挺不错的，跟Scrapbook (Plus)配合起来相当无敌了——虽然它的工具栏按钮显得比较繁杂 #firefox 2010-08-18 
+* 俺Google Reader上的feeds太多了，完全看不过来（当然不是全看，但现在是挑着看就挑不过来），于是决定把技术方面的feeds转到鲜果上面去 2010-08-13 
+* to sugarsync: vgod-vim-cheat-sheet-full.pdf 2010-08-12 
+* hack了一下metapath, 使得可以用它来作为scite, universal viewer等程序的文件浏览组件 2010-08-11 
+* 转一个：每一个应对字符集/编码问题的程序员上辈子都是折翼的天使 2010-08-11 
+* sugarsync网站上还选多个文件打包下载功能，越来越喜欢这个东东了 2010-08-09 通过网页
+* javaeye今天怎么了，下载不了文档中的附件。 总是让我耐心等待5秒中，结果5小时都不行 2010-08-09 
+* On-screen keyboard: 1) http://packages.debian.org/sid/matchbox-keyboard 2) http://code.google.com/p/eazykeyboard/ 2010-08-06 
+* 昨天用jailbreakme.com给俺家的iPod touch(一代，刷了3.1.2)越狱一举成功，真是简单方便啊 2010-08-06 
+* 试图玩eclim，没能跑起来: 在Eclipse-3.3上在集成这一步卡住了，Window->View里面死活没出现那个eclim选项，直接跑eclimd也不行; 换3.5又出现安装程序自动下载模块的问题（需要设置代理才能下载，而eclim安装程序没让我设置代理） 2010-08-04 
+* RT @holger_p: Spent two hours converting the #emacs #lisp #manual to #epub. Check out the result: http://tinyurl.com/35qkxh3. 2010-08-03 通过网页
+* cmd不支持單引號來表示一整個參數，awk／sed這類沒法用，找到一個win-bash，還是會出現env..too large RT @xingzhipan: @感觉windows那个cmd，parsing/escaping rules这些做得非常naive 2010-07-30 通过网页
+* rainbow-mode - WYSWYG color value editor, supports HTML/X color names, rgb() css syntax. #emacs http://julien.danjou.info/rainbow-mode.html 2010-07-30 
+* #emacs: windows的cmd实在很痤啊，想运行个xargs，sed,grep什么的不是environment is too large就是引号传不对，最后用上了emacsw32提供的w32shell.el，M-x msys-shell或者M-x cygwin-shell 2010-07-30 
+* Firefox 4.0beta2发布了，不过我常用的扩展几乎都还不支持（各扩展兼容性:https://addons.mozilla.org/en-US/firefox/compatibility ）不过在DTA 2.0b2支持 http://www.downthemall.net 2010-07-28 
+* vrome比vimium多了o/t/C-z/C-i等功能，但n/N比较别扭，不支持file://地址，而o还不如直接在URL栏输入（有自动完成和搜索提示），C-i还要运行一个ruby/python服务器——所以还是用vimium 2010-07-27 
+* 看见一个Java锁分析器http://www.ibm.com/developerworks/cn/java/j-ibmtools3/ ，高兴地折腾了半天，最后才发现只能用于IBM的JVM :-( 2010-07-27 
+* 昨天将俺的.emacs切换到org-mode了，参见这个 http://gregnewman.org/journal/2010/jan/24/let-org-mode-manage-your-emacs-dot-files/ 2010-07-27 
+* 找到了两个仿vimperator的chrome扩展: vimium和vrome， 为到底用哪个磨叽了半天，比较来比较去，最后仅仅因为vimnum可以用?显式快捷键列表决定用它 #vim #chrome 2010-07-23 
+* 给emacs换了tangotango配色，但它对于org mode是不同级别标题采用不同大小的字体的，于是我只能放弃了我最喜欢的Dina字体(因为它最大只有10号)，改用Inconsolata 11，不过得打开cleartype才行 2010-07-23 
+* @mingjian01 发现Chrome也有问题，开十来个tab后，常常会导致整个系统反应不过来，尤其是锁定之后 2010-07-22  回复 mingjian01
+* Org mode(v6.36)新版本支持直接显式图片链接了，不过还得从http://gnuwin32.sf.net下载libungif,libpng,libjpeg等包才行 #emacs 2010-07-20 
+* 昨晚从Cydia上找到一个sbsetting的按钮插件，可以关闭自动横屏功能，这样躺着用opera mini看网页就比较顺心了 #iphone 2010-07-19 
+* 我这样的firefox死忠也开始比较多地使用chrome了——Firefox很不爽的是常常从别的程序切回来就很久很久没有反应 2010-07-19 
+* 关于ELPA 0.9 on emacs23: 我土了，原来跟v24不一样，包名上没有链接，C-h m可以看到应该怎么操作了 2010-07-15 
+* log4j mode的存在证明了我所说的#emacs 的“长尾”优势：其它还有哪个IDE会去做这样一个插件? http://log4j-mode.sf.net/ 2010-07-14 
+* "97% 的twitter 用户被少于100个人关注", 看来俺属于3% ？ 2010-07-14 
+* 从http://tromey.com/elpa/ 下载了最新的package.el (v0.9,2007, emacs 24也是用的这个)，但似乎在emacs 23上用不起来： 包列表下载后能都列出现，但包名上没有链接，包信息里面也没有出现[Install]按钮 :-( 2010-07-14 
+* emacs 24里面有了一个类似xemacs的包管理器，它从http://elpa.gnu.org/packages/ 提取包列表，用户选择后下载并自动安装。目前这个列表还是测试阶段，没几个包，估计等emacs 24发布的时候应该有不少了 2010-07-14 
+* jtags: #Emacs minor mode for editing and browsing #Java source code 对我而言这个轻量级的东西比JDEE实用（后者太复杂了，还慢） http://jtags.sf.net/ 2010-07-14 
+* 有消息称「流氓天使」Azazel会回归《邪恶力量》（Supernatural）第六季，而且首集就会出现。Corin Nemec可能扮演Winchester兄弟的表哥Christian Campbell。这些消息均未得到官方证实。 2010-07-14 通过网页
+* 刚发现一个好东西: Conque: Run interactive commands inside a Vim buffer http://code.google.com/p/conque/ 2010-07-13 
+* 我首先看到的Vista/Win7的亮点是将 “C:\Documents and Settings\<username>”改成了“C:\Users\<username>”，这是多么富有智慧（用户体验）、 创新（UNIX守着一个/home用了半个世纪）和勇气（硬盘厂商的不满）的抉择啊 2010-07-12 
+* 刚将ucweb升级到了7.2beta，夜间模式终于又可以看清了 2010-07-09 通过网页
+* 反思一下这半年在业余的成绩，发现几乎啥也没有啊，仅仅是基本掌握了Emacs，虽然这东西挺不错，但我基本上已经放弃"将Emacs作为IDE来用"这个目标了 2010-07-09 
+* Dropbox for Debian: deb http://dl.rivco.net/debian squeeze main got from: http://ghostbar.ath.cx/2010/07/06/dropbox-for-debian/ #debian 2010-07-07 
+* 用Firefox的Readability扩展看IBM dw上面对外文章，除了侧边栏，它居然还会把"参考资料"、"关于作者"这些内容也过滤掉，真神奇 #firefox 2010-07-06 
+* RT @duanzi: Steve Jobs 回应某用户对 iPhone 4 信号不好的质疑: Retire, relax, enjoy your family. It is just a phone. Not worth it. @duanzi #duanzi 2010-07-02 通过网页
+* RT @hao520: 想起一個 Lisp 的老笑話。一名駭客費盡心思從國防部最高機密人工智慧電腦偷出某個重要程式原始碼的最後一頁。他得意地檢視自己的戰利品時，卻看到：一整頁的右括號。 2010-07-02 通过网页
+* 不提供RSS的网站是可耻的 2010-07-01 
+* 搞不懂ffmpeg复杂的选项的话，可以用这个winff这个工具来为iphone转换视频文件: http://www.ibm.com/developerworks/cn/opensource/os-av-excess/index.html 2010-07-01 
+* Nokia 揶揄apple的文章：http://conversations.nokia.com/2010/06/28/how-do-you-hold-your-nokia/ 2010-07-01 通过网页
+* 修復iphone 4天線問題的最簡單方法（joke） http://geektechnica.com/2010/06/easy-fix-for-iphone-antenna-problem/ 2010-07-01 通过网页
