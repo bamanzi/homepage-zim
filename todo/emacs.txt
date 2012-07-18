@@ -5,3 +5,38 @@ Creation-Date: 2012-06-24T22:18:39+08:00
 ====== emacs ======
 Created 星期日 24 六月 2012
 
+
+[ ] dict/		google-translate  https://github.com/emacsmirror/google-translate
+[ ] editing/	dtrt-indent, judge-indent, smart-mark
+[ ] python/gpycomplete  https://github.com/fgallina/gpycomplete
+[ ] color-theme-sanityinc-tomorrow.el  https://github.com/purcell/color-theme-sanityinc-tomorrow
+[ ] Error during redisplay: (error No match 1 in highlight (1 font-lock-warning-face prepend)) [2 times]
+   and: Symbol's function definition is void: cedet-called-interactively-p
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                 
+30-dict-spell ^m
+
+75-org-mode:
+    More Org Header Searching | Irreal ;;http://irreal.org/blog/?p=683
+
+25-tabbar
+              '((:propertize "[O]"
+                             local-map (keymap
+                                        (header-line keymap
+                                                     (mouse-1   . widen-current-window-by-mouse)                                                     
+                                                     (S-mouse-1 . mouse-delete-other-windows)
+                                                     (C-mouse-1 . delete-other-windows-vertically-by-mouse)  ;;FIXME: not work
+                                                     (M-mouse-1 . delete-other-windows-horizontally-by-mouse))) ;;FIXME: not work
+                             help-echo "  mouse-1: widen current window
+S-mouse-1: delete other windows
+C-mouse-1: delete other window vertically
+M-mouse-1: delete other window horizontally")
+
+
+
+
+
