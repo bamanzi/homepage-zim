@@ -13,7 +13,7 @@ Created 星期六 14 七月 2012
 * 我的iphone前天出现问题，通过AppStore安装的软件全都不见了，从SBSettings的隐藏图标功能界面看它们都还在，但就是图标显示不出来，我用AppStore新装卸了几个软件也不管用... 2009-12-25 
 * emacs中格式化xml: C-x h全选，然后C-u M-| 输入如下命令xmllint --format - #emacs #xml 2009-12-25 
 * sf.net上cedet最新的版本(1.0pre6)在emacs-23.1(windows)上也用不了，用最新的cvs也不行，倒是在这里找了一个可用的　http://download.csdn.net/source/1721748 2009-12-25 
-* #todo cvs -z3 -[[notes:javaeye chats:d:pserver:anonymous@cedet.cvs.sourceforge.net]]:/cvsroot/cedet co -P modulename 2009-12-22 
+* #todo cvs -z3 -notes:javaeye chats:d:pserver:anonymous@cedet.cvs.sourceforge.net:/cvsroot/cedet co -P modulename 2009-12-22 
 * #emacs CUA模式对矩形块的支持真不错 (C-Enter进入选取模式，然后可以用光标键选择区域，可直接敲文字） 2009-12-22 
 * #emacs: 将双击绑定到了highlight-symbol-at-point F3: highlight-symbol-next S-F3: highlight-symbol-prev 2009-12-22 
 * 转: @bamanzi: 居然stackoverflow上投票第二多的python问题居然是用哪个IDE //而对于PHP讨论得比较多的就是选哪个框架(除了PHP代码的可维护性之外:-) 2009-12-21 
