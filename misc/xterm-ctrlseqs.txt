@@ -1,7 +1,7 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
-#+TITLE: 终端下使用Emacs时的组合健
+====== 终端下使用Emacs时的组合健 ======
 #+OPTIONS: num:t toc:t
 
 
@@ -18,7 +18,7 @@ Wiki-Format: zim 0.4
 
 简单总结一下来说，当在终端里运行应用程序时，按下一个组合键之后的事情是这样:
 1. 终端模拟器将其翻译为对应的Xterm control sequences，发送给对端主机;
-2. 对端主机根据 ~TERM~ 在terminfo中查找翻译表，翻译为对应的按键信息，传递给应用程序;
+2. 对端主机根据 ''TERM'' 在terminfo中查找翻译表，翻译为对应的按键信息，传递给应用程序;
 3. 应用程序对组合健做出响应。
 
 所以可能存在的问题是:
@@ -72,16 +72,14 @@ http://www.xfree86.org/current/ctlseqs.html#VT220-Style%20Function%20Keys
 	</code>
 (完整的代码可参照这里: http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/xterm-extras.el )
 
-当然，对于其它应用程序，就不一定能自己翻译了，你得硬着头皮去研究terminfo（但有的程序想了一些方法来避免让用户直接了解这些，比如
-Midnight Commander提供了一个[[http://digiland.tw/uploads/2_mc_learn_keys2.gif|Learn Keys对话框]]来提示用户输入各种键以将它们与具体键码对应起来）。
+当然，对于其它应用程序，就不一定能自己翻译了，你得硬着头皮去研究terminfo（但有的程序想了一些方法来避免让用户直接了解这些，比如Midnight Commander提供了一个[[http://digiland.tw/uploads/2_mc_learn_keys2.gif|Learn Keys对话框]]来提示用户输入各种键以将它们与具体键码对应起来）。
 
 ==== 烦人的细节 ====
 
 === 关于control sequences ===
 * 同一个按键，可能有多种表示方法，不过你的TERM可能只支持其中一种。以 ''^[['' 开始的序列叫做 [[http://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes%20|CSI序列]]，以 ''^[O'' 开始的序列叫做SS3序列，还有其它的序列。不过CSI算是“主流”，支持的按键比较多，受各种terminfo支持的比率也比较大(不过很多时候是混合使用的，比如下面的XFree86 xterm在''F1..F4''使用了SS3序列，在''F5..F12''使用了CSI序列);
 
-* 对于Ctrl/Alt/Shift这些 ~modifier~, 是在类别前缀后面添加 /;m/ ，这里m是个数字，其值本来是按位运算的规则来的，分别是: ~Shift: 1, Alt:
-2, Ctrl: 4~ ，不过还要再加上1。例如:
+* 对于Ctrl/Alt/Shift这些 //modifier//, 是在类别前缀后面添加 '';m'' ，这里m是个数字，其值本来是按位运算的规则来的，分别是: ''Shift: 1, Alt:2, Ctrl: 4'' ，不过还要再加上1。例如:
 
 <code>
 '''
@@ -89,7 +87,6 @@ Midnight Commander提供了一个[[http://digiland.tw/uploads/2_mc_learn_keys2.g
 | Emacs         | <insert> | <S-insert> | <M-insert> | <M-S-insert>  | <C-insert> | <C-S-insert>   | <C-M-insert> |
 | Xterm ctrlseq | ^[[2~    | ^[[2;2~    | ^[[2;3~    | ^[[2;4~       | ^[[2;5~    | ^[[2;6~        | ^[[2;7~      |
 '''
-
 </code>
 
 === 关于功能键F1..F12 ===
@@ -123,8 +120,7 @@ Midnight Commander提供了一个[[http://digiland.tw/uploads/2_mc_learn_keys2.g
 
 * 关于Emacs里面的 ''function-key-map'': Emacs里面有三个keymap用于“翻译”按键信息: ''input-decode-map'', ''function-key-map'' 和 ''key-translation-map'' , 功能比较接近，但也存在一些区别(详情可查看[[http://www.gnu.org/software/emacs/manual/html_node/elisp/Translation-Keymaps.html|Translation Keymaps - GNU Emacs Lisp Reference Manual]])：
 	* 这三者的查找顺序是: ''input-decode-map'' -> ''local-function-key-map'' -> ''key-translation-map''
-	* ''function-key-map'' 与另外两个的区别还有一个区别: 它不是全局性的，而是可以针对多个键盘设备进行设置 (其实是
-''local-function-key-map'' ） 。不过，除非你在一个Emacs会话里使用多种终端（比如daemon模式），否则你应该不会需要针对多种多个键盘设备进行设置;
+	* ''function-key-map'' 与另外两个的区别还有一个区别: 它不是全局性的，而是可以针对多个键盘设备进行设置 (其实是''local-function-key-map'' ） 。不过，除非你在一个Emacs会话里使用多种终端（比如daemon模式），否则你应该不会需要针对多种多个键盘设备进行设置;
 	* 在具体能力上，三者差异倒不大，更多地只是约定俗成而已:
 		* ''key-translation-map'' 一般不用于Xterm control sequences的转换，而是用于功能的替代，比如用<f11>替代<C-x>的功能:
 			'''
@@ -136,84 +132,93 @@ Midnight Commander提供了一个[[http://digiland.tw/uploads/2_mc_learn_keys2.g
 		* ''input-decode-map'' 的描述是 //Keymap that decodes input escape sequences//, 所以它的用途正是进行我们这里需要的（所以我觉得上面说那个[[http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/xterm-extras.el|xterm-extra.el]]里面的用法并不太正确）
 
 === 各种终端 ===
-* 对于PC键盘，一个比较直观的键码表是mintty的wiki文档: [[http://code.google.com/p/mintty/wiki/Keycodes|Keycodes - mintty - Character sequences sent by keys in mintty]]]] , 这比那份 [[http://euc.jp/i18n/ctlseqs.txt|Xterm control sequences]]要容易懂得多
+* 对于PC键盘，一个比较直观的键码表是mintty的wiki文档: [[http://code.google.com/p/mintty/wiki/Keycodes|Keycodes - mintty - Character sequences sent by keys in mintty]] , 这比那份 [[http://euc.jp/i18n/ctlseqs.txt|Xterm control sequences]]要容易懂得多
 
 * 各个终端上的快捷键序列:
 '''
 <code>
-|          | putty(win) | putty(linux) | mintty   | xfce-terminal | gnome-terminal |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-| up       | ^[[A       | ^[[A         | ^[[A     | ^[[A          | ^[[A           |   |
-| down     | ^[[B       | ^[[B         | ^[[B     | ^[[B          | ^[[B           |   |
-| right    | ^[[C       | ^[[C         | ^[[C     | ^[[C          | ^[[C           |   |
-| left     | ^[[D       | ^[[D         | ^[[D     | ^[[D          | ^[[D           |   |
-| S-up     | -          | -            | (term)   | (term)        | ^[[2A          |   |
-| S-down   | -          | -            | (term)   | (term)        | ^[[2B          |   |
-| S-right  | -          | -            | ^[[1;2C  | ^[[1;2C       | ^[[2C          |   |
-| S-left   | -          | -            | ^[[1;2D  | ^[[1;2D       | ^[[2D          |   |
-| M-up     | ^[^[[A     | ^[^[[A       | ^[[1;3A  | ^[[1;3A       | ^[[3A          |   |
-| M-down   | ^[^[[B     | ^[^[[B       | ^[[1;3B  | ^[[1;3B       | ^[[3B          |   |
-| M-right  | ^[^[[C     | ^[^[[C       | ^[[1;3C  | ^[[1;3C       | ^[[3C          |   |
-| M-left   | ^[^[[D     | ^[^[[D       | ^[[1;3D  | ^[[1;3D       | ^[[3D          |   |
-| C-up     | -          | -            | ^[[1;5A  | ^[[1;5A       | ^[[5A          |   |
-| C-down   | -          | -            | ^[[1;5B  | ^[[1;5B       | ^[[5B          |   |
-| C-right  | /          | -            | ^[[1;5C  | ^[[1;5C       | ^[[5C          |   |
-| C-left   | /          | -            | ^[[1;5D  | ^[[1;5D       | ^[[5D          |   |
-| C-M-up   | ^[^[OA     | ^[^[OA       | ^[[1;7A  | ^[[1;7A       | ^[[1;7A        |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-|          | putty(win) | putty(linux) | mintty   | xfce-terminal | gnome-terminal |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-| home     | ^[[1~      | ^[[1~        | ^[[H     | ^[OH          | ^[OH           |   |
-| end      | ^[[4~      | ^[[4~        | ^[[F     | ^[OF          | ^[OF           |   |
-| insert   | ^[[2~      | ^[[2~        | ^[[2~    | ^[[2~         | ^[[2~          |   |
-| delete   | ^[[3~      | ^[[3~        | ^[[3~    | ^[[3~         | ^[[3~          |   |
-| pgup     | ^[[5~      | ^[[5~        | ^[[5~    | ^[[5~         | ^[[5~          |   |
-| pgdn     | ^[[6~      | ^[[6~        | ^[[6~    | ^[[6~         | ^[[6~          |   |
-| S-home   | -          | -            | (term)   | (term)        | (term)         |   |
-| S-end    | ^[[4~      | -            | (term)   | (term)        | (term)         |   |
-| S-insert | (paste)    | -            | (paste)  | (paste)       | (paste)        |   |
-| S-delete | ^[[3~      | -            | ^[[3;2~  | ^[[3;2~       | ^[[3;2~        |   |
-| S-pgup   | (term)     | /            | (term)   | (term)        | (term)         |   |
-| S-pgdn   | (term)     | /            | (term)   | (term)        | (term)         |   |
-| M-home   | ^[^[[1~    | ^[^[[1~      | ^[[1;3H  | -             | -              |   |
-| M-end    | ^[^[[4~    | ^[^[[4~      | ^[[1;3F  | -             | -              |   |
-| M-insert | ^[^[[2~    | ^[^[[2~      | ^[[2;3~  | ^[[2;3~       | ^[[2;3~        |   |
-| M-delete | ^[^[[3~    | ^[^[[3~      | ^[[3;3~  | ^[[3;3~       | ^[[3;3~        |   |
-| M-pgup   | ^[^[[5~    | ^[^[[5~      | ^[[5;3~  | ^[[5;3~       | ^[[5;3~        |   |
-| M-pgdn   | ^[^[[6~    | ^[^[[6~      | ^[[6;3~  | ^[[6;3~       | ^[[6;3~        |   |
-| C-home   | /          | /            | ^[[1;5H  | -             | -              |   |
-| C-end    | /          | /            | ^[[1;5F  | -             | -              |   |
-| C-insert | /          | /            | (copy)   | ^[[2~   ?     | (copy)         |   |
-| C-delete | /          | /            | ^[[3;5~  | ^[[3~   ?     | ^[[3;5~        |   |
-| C-pgup   | (term)     | /            | ^[[5;5~  | ^[[5~   ?     | ^[[5;5~        |   |
-| C-pgdn   | (term)     | /            | ^[[6;5~  | ^[[6~   ?     | ^[[6;5~        |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-|          | putty(win) | putty(linux) | mintty   | xfce-terminal | gnome-terminal |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-| f1       | ^[[11~     | ^[[11~       | ^[OP     | (help)        | (help)         |   |
-| f2       | ^[[12~     | ^[[12~       | ^[OQ     | ^[OQ          | ^[OQ           |   |
-| f3       | ^[[13~     | ^[[13~       | ^[OR     | ^[OR          | ^[OR           |   |
-| f4       | ^[[14~     | ^[[14~       | ^[OS     | ^[OS          | ^[OS           |   |
-| S-f1     | ^[[23~     | ^[[23~       | ^[[1;2P  | ^[O1;2P       | ^[O2P          |   |
-| M-f1     | ^[^[[11~   | ^[^[[11~     | ^[[1;3P  | ^[O1;3P       | ^[O3P          |   |
-| C-f1     | -          | -            | ^[[1;5P  | /             | /              |   |
-| M-S-f1   | ^[^[23~    | ^[^[23~      |          | ^[O1;4P       | ^[O4P          |   |
-| C-S-f1   | -          | -            | ^[[1;6P  | ^[O1;6P       | ^[06P          |   |
-| C-M-f1   | -          | -            | ^[[1;7P  | (help)        | (help)         |   |
-| f5       | ^[[15~     | ^[[15~       | ^[[15~   | ^[[15~        | ^[[15~         |   |
-| f6       | ^[[17~     | ^[[17~       | ^[[17~   | ^[[17~        | ^[[16~         |   |
-| S-f5     | ^[[28~     | ^[[28~       | ^[[15;2~ | ^[[15;2~      | ^[[15;2~       |   |
-| M-f5     | ^[^[[15~   | ^[^[[15~     | ^[[15;3~ | ^[[15;3~      | ^[[15;3~       |   |
-| C-f5     | -          | -            | ^[[15;5~ | ^[[15;5~      | ^[[15;5~       |   |
-| M-S-f5   | ^[^[[28~   | ^[^[[28~     | ^[[15;4~ | ^[[15;4~      | ^[[15;4~       |   |
-| C-S-f5   | -          | -            | ^[[15;6~ | ^[[15;6~      | ^[[15;6~       |   |
-| C-M-f5   | -          | -            | ^[[15;7~ | ^[[15;7~      | ^[[15;7~       |   |
-|----------+------------+--------------+----------+---------------+----------------+---|
-| S-tab    | ^[[Z       | ^[[Z         | ^[[Z     | ^[[Z          | ^[[Z           |   |
-| C-tab    | -          | -            | ^[[1;5I  | -             | -              |   |
-| S-Bksp   | -          | -            | -        | -             | -              |   |
-| C-Bksp   | -          | -            | -        | -             | -              |   |
-|          |            |              |          |               |                |   |
+|           | putty(win) | putty(linux) | mintty   | xfce-terminal     | gnome-terminal | mate-terminal | term/xterm.el  |
+|           | 0.62       |              | 1.1      | 0.48              | 2.16           | 1.4           | SS3   CSI      |
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+| up        | \e[A       | \e[A         | \e[A     | \e[A              | \e[A           | \e[A          | \eOA  \e[A     |
+| down      | \e[B       | \e[B         | \e[B     | \e[B              | \e[B           | \e[B          | \eOB  \e[B     |
+| right     | \e[C       | \e[C         | \e[C     | \e[C              | \e[C           | \e[C          | \eOC  \e[C     |
+| left      | \e[D       | \e[D         | \e[D     | \e[D              | \e[D           | \e[D          | \eOD  \e[D     |
+| home      | \e[1~      | \e[1~        | \e[H     | \eOH              | \eOH           | \eOH          | \eOH  \e[1~    |
+| end       | \e[4~      | \e[4~        | \e[F     | \eOF              | \eOF           | \eOF          | \eOF  __?__    |
+| S-up      | -          | -            | (term)   | (term)            | \e[2A  ?       | \e[1;2A       | \eO2A \e[1;2A  |
+| S-down    | -          | -            | (term)   | (term)            | \e[2B  ?       | \e[1;2B       | \eO2B \e[1;2B  |
+| S-right   | -          | -            | \e[1;2C  | \e[1;2C           | \e[2C  ?       | \e[1;2C       | \eO2C \e[1;2C  |
+| S-left    | -          | -            | \e[1;2D  | \e[1;2D           | \e[2D  ?       | \e[1;2D       | \eO2D \e[1;2D  |
+| S-home    | -          | -            | (term)   | (term)            | (term)         | (term)        | \eO2H \e[1;2H  |
+| S-end     | \e[4~      | -            | (term)   | (term)            | (term)         | (term)        | \eO2F \e[1;2F  |
+| M-up      | \e\e[A     | \e\e[A       | \e[1;3A  | \e[1;3A           | \e[3A          | \e[1;3A       | ____  \e[1;3A  |
+| M-down    | \e\e[B     | \e\e[B       | \e[1;3B  | \e[1;3B           | \e[3B          | \e[1;3B       | ____  \e[1;3B  |
+| M-right   | \e\e[C     | \e\e[C       | \e[1;3C  | \e[1;3C           | \e[3C          | \e[1;3C       | ____  \e[1;3C  |
+| M-left    | \e\e[D     | \e\e[D       | \e[1;3D  | \e[1;3D           | \e[3D          | \e[1;3D       | ____  \e[1;3D  |
+| M-home    | \e\e[1~    | \e\e[1~      | \e[1;3H  | -                 | -              | -             | ____  \e[1;3H  |
+| M-end     | \e\e[4~    | \e\e[4~      | \e[1;3F  | -                 | -              | -             | ____  \e[1;3F  |
+| C-up      | -          | -            | \e[1;5A  | \e[1;5A           | \e[5A  ?       | \e[1;5A       | \eO5A \e[1;5A  |
+| C-down    | -          | -            | \e[1;5B  | \e[1;5B           | \e[5B  ?       | \e[1;5B       | \eO5B \e[1;5B  |
+| C-right   | /          | -            | \e[1;5C  | \e[1;5C           | \e[5C  ?       | \e[1;5C       | \e05C \e[1;5C  |
+| C-left    | /          | -            | \e[1;5D  | \e[1;5D           | \e[5D  ?       | \e[1;5D       | \e05D \e[1;5D  |
+| C-home    | /          | /            | \e[1;5H  | -                 | -              | -             | \eO5H \e[1;5H  |
+| C-end     | /          | /            | \e[1;5F  | -                 | -              | -             | \e05F \e[1;5F  |
+| C-S-up    |            |              |          |                   | \e[6A  ?       | -             | ____  \e[1;6A  |
+| C-S-down  |            |              |          |                   | \e[6B  ?       | -             | ____  \e[1;6B  |
+| C-S-right |            |              |          |                   | \e[6C  ?       | \e[1;6C       | ____  \e[1;6C  |
+| C-S-left  |            |              |          |                   | \e[6D  ?       | \e[1;6D       | ____  \e[1;6D  |
+| C-M-up    | \e\eOA     | \e\eOA       | \e[1;7A  | \e[1;7A           | \e[7A  ?       | \e[1;7A       | ____  \e[1;7A  |
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+|           | putty(win) | putty(linux) | mintty   | xfce-terminal     | gnome-terminal | mate-terminal | term/xterm.el  |
+|           | 0.62       |              | 1.1      | 0.48              | 2.16           | 1.4           | SS3   CSI      |
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+| insert    | \e[2~      | \e[2~        | \e[2~    | \e[2~             | \e[2~          | \e[2~         | ____  \e[2~    |
+| delete    | \e[3~      | \e[3~        | \e[3~    | \e[3~             | \e[3~          | \e[3~         | ____  \e[3     |
+| pgup      | \e[5~      | \e[5~        | \e[5~    | \e[5~             | \e[5~          | \e[5~         | ____  \e[5~    |
+| pgdn      | \e[6~      | \e[6~        | \e[6~    | \e[6~             | \e[6~          | \e[6~         | ____  \e[6~    |
+| S-insert  | (paste)    | -            | (paste)  | (paste)           | (paste)        | (paste)       | ____  \e[2;2~  |
+| S-delete  | \e[3~      | -            | \e[3;2~  | \e[3;2~           | \e[3;2~        | \e[3;2~       | ____  \e[3;2~  |
+| S-pgup    | (term)     | /            | (term)   | (term)            | (term)         | (term)        | ____  \e[5;2~  |
+| S-pgdn    | (term)     | /            | (term)   | (term)            | (term)         | (term)        | ____  \e[6;2~  |
+| M-insert  | \e\e[2~    | \e\e[2~      | \e[2;3~  | \e[2;3~           | \e[2;3~        | \e[2;3~       | ____  \e[2;3~  |
+| M-delete  | \e\e[3~    | \e\e[3~      | \e[3;3~  | \e[3;3~           | \e[3;3~        | \e[3;3~       | ____  \e[3;3~  |
+| M-pgup    | \e\e[5~    | \e\e[5~      | \e[5;3~  | \e[5;3~           | \e[5;3~        | \e[5;3~       | ____  \e[5;3~  |
+| M-pgdn    | \e\e[6~    | \e\e[6~      | \e[6;3~  | \e[6;3~           | \e[6;3~        | \e[6;3~       | ____  \e[5;3~  |
+| C-insert  | /          | /            | (copy)   | (copy)            | (copy)         | (copy)        | ____  \e[2;5~  |
+| C-delete  | /          | /            | \e[3;5~  | \e[3;5~           | \e[3;5~        | \e[3;5~       | ____  \e[3;5~  |
+| C-pgup    | (term)     | /            | \e[5;5~  | \e[5;5~ (prevtab) | \e[5;5~        | \e[5;5~       | ____  \e[5;5~  |
+| C-pgdn    | (term)     | /            | \e[6;5~  | \e[6;5~ (nexttab) | \e[6;5~        | \e[6;5~       | ____  \e[6;5~  |
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+|           | putty(win) | putty(linux) | mintty   | xfce-terminal     | gnome-terminal | mate-terminal | term/xterm.el  |
+|           | 0.62       |              | 1.1      | 0.48              | 2.16           | 1.4           | SS3   CSI 
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+| f1        | \e[11~     | \e[11~       | \eOP     | \eOP  (help)      | \eOP (help)    | \eOP  (help)  | \eOP  \e[11~   |
+| f2        | \e[12~     | \e[12~       | \eOQ     | \eOQ              | \eOQ           | \eOQ          | \eOQ  \e[12~   |
+| f3        | \e[13~     | \e[13~       | \eOR     | \eOR              | \eOR           | \eOR          | \eOR  \e[13~   |
+| f4        | \e[14~     | \e[14~       | \eOS     | \eOS              | \eOS           | \eOS          | \eOS  \e[14~   |
+| S-f1      | \e[23~     | \e[23~       | \e[1;2P  | \eO1;2P           | \eO2P          | \eO1;2P       | \eO2P \e[1;2P  |
+| M-f1      | \e\e[11~   | \e\e[11~     | \e[1;3P  | \eO1;3P           | \eO3P          | \eO1;3P       | \eO3P ____     |
+| C-f1      | -          | -            | \e[1;5P  | /                 | /              | /             | \eO5P ____     |
+| M-S-f1    | \e\e23~    | \e\e23~      |          | \eO1;4P           | \eO4P          | \eO1;4P       | \eO4P ____     |
+| C-S-f1    | -          | -            | \e[1;6P  | \eO1;6P           | \e06P          | \eO1;6P       | \e06P ____     |
+| C-M-f1    | -          | -            | \e[1;7P  | (help)            | (help)         | (help)        | ____  ____     |
+| f5        | \e[15~     | \e[15~       | \e[15~   | \e[15~            | \e[15~         |               | ____  \e[15~   |
+| f6        | \e[17~     | \e[17~       | \e[17~   | \e[17~            | \e[16~         |               | ____  \e[16~   |
+| S-f5      | \e[28~     | \e[28~       | \e[15;2~ | \e[15;2~          | \e[15;2~       | \e[15;2~      | ____  \e[15;2~ |
+| M-f5      | \e\e[15~   | \e\e[15~     | \e[15;3~ | \e[15;3~          | \e[15;3~       | \e[15;3~      | ____  \e[15;3~ |
+| C-f5      | -          | -            | \e[15;5~ | \e[15;5~          | \e[15;5~       | \e[15;5~      | ____  \e[15;5~ |
+| M-S-f5    | \e\e[28~   | \e\e[28~     | \e[15;4~ | \e[15;4~          | \e[15;4~       | \e[15;4~      | ____  \e[15;4~ |
+| C-S-f5    | -          | -            | \e[15;6~ | \e[15;6~          | \e[15;6~       | \e[15;6~      | ____  \e[15;6~ |
+| C-M-f5    | -          | -            | \e[15;7~ | \e[15;7~          | \e[15;7~       | -             | ____  _____    |
+|-----------+------------+--------------+----------+-------------------+----------------+---------------+----------------|
+| S-tab     | \e[Z       | \e[Z         | \e[Z     | \e[Z              | \e[Z           | ^[[Z          | \e[27;2;9~     |
+| C-tab     | -          | -            | \e[1;5I  | -                 | -              | -             | \e[27;5;9~     |
+| S-return  |            |              |          |                   |                |               | \e[27;2;13~    |
+| C-return  |            |              |          |                   |                |               | \e[27;5;13~    |
+| S-Bksp    | -          | -            | -        | -                 | -              |               |                |
+| C-Bksp    | -          | -            | -        | -                 | -              |               |                |
+|           |            |              |          |                   |                |               |                |
 </code>
 '''
 

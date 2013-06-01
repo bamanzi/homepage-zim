@@ -1,0 +1,159 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-05-30T22:21:41+08:00
+
+====== [Emacs] 小技巧: 高亮/修改所有同名符号 ======
+Created 星期四 30 五月 2013
+
+@emacs @editor
+
+(此篇面向初级用户，写的比较啰嗦，请中高级用户见谅。
+
+其实这篇的草稿是9月初写的，躺在草稿箱里面3个月了，最近工作和生活都比较忙，没时间来整理格式 :-( ）
+
+===== ** hi-lock-mode =====
+
+Emacs自带hi-lock-mode (hi-lock.el)，里面提供了一下几个很有用的命令:
+
+* ''highlight-phrase (M-s h p)''
+* ''highlight-regexp (M-s h r)''
+* ''highlight-lines-matching-regexp (M-s h l)''
+
+使用时直接输入上面命令或快捷键即可，不用先打开 ''hi-lock-mode'' ，Emacs会自动打开。
+
+使用时Emacs会先问你要高亮什么内容，如果你不想手工输入的话，得事先拷贝好内容再在这里粘贴。
+
+然后Emacs会问你使用那种风格(face)来显示高亮，除了hi-lock.el提供的 ''hi-yellow, hi-pink, hi-green'' 等颜色之外，你也可以使用Emacs里面其它的face。
+
+要去除高亮，用 ''M-x unhighlight-regexp (M-s h u)''，它会自动提供当前已有条目（刚才通过上 述三个命令输入的内容）供你选择。
+
+===== ** highlight-symbol =====
+
+http://nschum.de/src/emacs/highlight-symbol/
+
+这个第三方库其实是对''hi-lock-mode''的封装，使得用户用起来更方便:
+
+* highlight-symbol-at-point: 因为大多数时候我们只关注当前焦点所在的符号，所以可以省略输入高亮内容那一步，颜色也不用用户输入了，它会自己随机挑一个，这个命令正是这样工作的；
+* 可以方便地跳转到当前符号的上一次/下一此出现位置(''highlight-symbol-prev, highlight-symbol-next'')
+* 还可以限定只在当前函数里面查找(''highlight-symbol-next-in-defun, highlight-symbol-prev-in-defun'')
+
+这就跟vim用户很喜欢的*和#键功能差不多了，我绑定的快捷键也是沿用了这两个符号:
+
+	'''
+	(require 'highlight-symbol) ;;Use autoload' oridle-require' if you like
+	
+	(global-set-key (kbd "M-s j") 'highlight-symbol-at-point) 
+	(global-set-key (kbd "<C-double-mouse-1") 'highlight-symbol-at-point)
+	
+	(global-set-key (kbd "M-s *") 'highlight-symbol-next) 
+	(global-set-key (kbd "M-s #") 'highlight-symbol-prev)
+	
+	(global-set-key (kbd "C-*") 'highlight-symbol-next) 
+	(global-set-key (kbd "C-#") 'highlight-symbol-prev)
+	'''
+
+
+后两个(''C-*, C-#'')是为了应付连续按的场景的，单次按键比多次要方便一点。不过这两个组合键在xterm(console, gnome-terminal, putty等)下面是没法用的（我比较少有在term下用emacs，如果用得比较多，倒是可以考虑绑定到''M-*''和''M-#'' 上)。
+
+===== ** idle-highlight =====
+
+https://github.com/nonsequitur/idle-highlight-mode
+
+很多朋友很喜欢能够自动高亮当前焦点所在的符号，当焦点移开之后又自动取消高 亮， idle-highlight.el 就是干这个的。
+
+将idle-highlight.el放到load-path内，然后在dotemacs里面加入:
+
+	''(autoload 'idle-highlight-mode "idle-highlight" "highlight the word the point is on" t)''
+
+使用时只要''M-x idle-highlight-mode RET'' 就可以了。
+
+如果想打开文件时自动开启该功能 如果要自动对所有文件都打开该功能，在dotemacs里面加入:
+ 
+	''(add-hook 'find-file-hook 'idle-highlight-mode)''
+ 
+如果只对某些主模式打开，则加入:
+
+	'''
+	(add-hook 'emacs-lisp-mode-hook 'idle-highlight-mode)
+	(add-hook 'python-mode-hook 'idle-highlight-mode)
+	(add-hook 'js-mode-hook 'idle-highlight-mode)
+	'''
+
+
+Emacs 24里面将所有编程语言的major mode做了变更，都变成继承自prog-mode了，这种情况下只 需要这样就可以对所有编程语言添加此功能（而其它文本编辑不受影响）:
+
+	''(add-hook 'prog-mode-hook 'idle-highlight-mode)''
+
+
+===== ** semantic-idle-local-symbol-highlight-mode =====
+
+CEDET里面提供了一个 ''semantic-idle-local-symbol-highlight-mode'' ，跟''idle-highlight''功能类 似，但依赖于CEDET的语法解析功能。我不怎么用CEDET，所以不能给出评价。有兴趣的可以看看Emacs中文网的这篇 [[[http://emacser.com/cedet.htm|用CEDET浏览和编辑C++代码]]] 里面的 [[[http://emacser.com/cedet.htm#sec-4.1.4|相应说明]]]。
+
+===== ** iedit =====
+
+https://github.com/victorhge/iedit/
+
+http://www.emacswiki.org/emacs/Iedit
+
+修改代码的时候尝尝需要对函数名、变量名进行修改，这就需要对同一符号的多次出现 (occurrence)进行批量替换（这个活儿在重构里面叫做[[http://en.wikipedia.org/wiki/Rename_Method|rename method]] 或者rename field。
+
+iedit.el可以部分实现这个目标。之所以说"部分"是因为它只是个编辑功能，只能应付单一文件的 情况，做不到基于工程或者语法来修改所有调用到的地方。
+
+iedit.el提供的iedit-mode是个临时模式，使用方法如下:
+
+1. 加载iedit.el: 将iedit.el放到site-lisp目录下，然后
+  a). 动态加载: ''M-x load-library RET iedit.el RET''
+  b). Emacs启动时加载: 在dotemacs里面加入:
+	'''
+	(autoload 'iedit-mode "iedit"
+	  "Edit multiple regions with the same content simultaneously." t)
+	'''
+
+
+2. 需要修改某个符号(函数名、变量名)时，将光标移动到该符号上，然后 ''M-x iedit-mode RET'' (或者按''C-;''  这是缺省配置的快捷键)即可进入**批量修改**模式，使用该符号的所有地方会被高亮。通过编辑修改该符号的名称，所做改动会即时反馈到所有高亮的地方。
+
+3. 修改完成后，重新输入 ''M-x iedit-mode RET'' 退出此模式。
+
+如前所说，iedit比较简单，没有语法分析能力，所以如果你一个文件里有两个类用了同名的变 量，它也区分不了，解决办法是结合[[http://emacswiki.org/emacs/Narrowing|Emacs Narrowing]]来实现: Emacs narrowing功能使得我们可以只编辑一个文件的一部分，而其它部分并不在可编辑范围内。所以实现上述目标的方法是:
+
+1. 选择(mark)要修改的函数(C-M-h)或者类；
+2. 输入 ''M-x narrow-to-region'' (或者 ''C-x n n''), 如果你是第一次使用这个功能，Emacs 会问你是否要启用该功能（因为这个功能会导致初学者晕头，所以为防止误入，缺省被禁用了）；
+3. 好了，Emacs现在只显示你选中的那一块代码了，你现在做全buffer的替换，并不会影响文件的其它部分：用上面的 ''M-x iedit-mode RET'' 来做替换吧；
+4. 修改完成，再用C-; 退出''iedit-mode''
+5. 用 ''M-x widen RE''T (或者 C-x n w) 回到编辑整个文件的模式
+
+参考: - [[http://emacs-fu.blogspot.de/2010/02/interactive-replacement.html|emacs-fu: interactive replacement]]
+
+===== ** 其它补充 =====
+
+==== * auto-highlight-symbol-mode ====
+
+https://github.com/mitsuo-saito/auto-highlight-symbol-mode/wiki/
+
+这是写这篇文章时翻到的一个扩展，看说明它用一个el文件把上述几个功能都包含了，并不需要三个文件:
+
+* automatic highlighting current symbol like eclipse IDE.
+* cycle through highlighted locations.
+* can specify the range to highlight.
+* can edit the highlighted symbols at a time.
+
+我还没有试过，有兴趣的朋友自己试试吧。
+
+====  * occur: 列出所有包含某个符号的行 ====
+
+用 ''M-x list-matching-lines RET'' (缺省绑定到了''M-s o'') 然后输入要查找的符号即可。Emacs会在一个新的窗口列出结 果，可以用 ''M-g n''和''M-g p'' 跳转到下一次、上一次出现的地方。(注: 此命令有个比较简短的别名: ''occur'' ），
+
+如果想将当前符号作为输入，免去每次输入的麻烦，可以用下面这个函数:
+
+	'''
+	(require 'thingatpt)
+	 
+	(defun occur-at-point (nlines)
+	 (interactive "P")
+	 (occur (format "%s" (thing-at-point 'symbol)) nlines))
+	 
+	(define-key search-map "O" 'occur-at-point)
+	'''
+
+
+要深入研究一下occur的话: http://emacswiki.org/emacs/OccurMode

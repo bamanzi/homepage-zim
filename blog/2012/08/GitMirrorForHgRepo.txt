@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-06-01T21:18:31+08:00
+
+====== GitMirrorForHgRepo ======
+Created 星期六 01 六月 2013
+

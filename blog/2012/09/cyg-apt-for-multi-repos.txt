@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-05-30T22:39:40+08:00
+
+====== Hack: 支持多个repo的cyg-apt ======
+Created 星期四 30 五月 2013
+
+@cygwin @python @pkgmgr
+
+原本是为了在Cygwin下面安装deepgrep这个工具（见介绍 [[http://noone.org/blog/English/Computer/Debian/CoolTools/deepgrep.futile|deepgrep: grep nested archives with one command]] )，但我发现自己编译它有点麻烦，然后又发现[[http://sourceware.org/cygwinports/|Cygwin Ports]]这个非官方仓库里面有这个strigi包。
+
+但这个strigi包的依赖又有点多，用cygwin setup下载很有点受不了：cygwin setup缺省会下载所有的更新，虽然可以选择不管它们，但界面操作起来可有点麻烦，本来一次性麻烦一点也就罢了，但因为这个镜像很不稳定，一旦在某个包上卡死，或者发现它正在下某个我不想下载的大软件包（比如emacs24)，就得重来。。。
+
+也试用了[[http://code.google.com/p/apt-cyg-multi/|apt-cyg-multi]]，但它不支持跨repo的包依赖，比如这个strigi的依赖里有几个包是在官方仓库里的，而我没有安装，它就一会儿又报告一个错误，我把缺的安装上了，再跑它，它又报告一个错误，我又得去装缺的那个。。。
+
+算了，还是自己动手吧，看了一下apt-cyg-multi的代码，用bash写的，我觉得可读性不是太好，调试也比较麻烦，不想在这个上面改。
+
+于是又拿起了自己简单修改过的[[http://code.google.com/p/cyg-apt/|cyg-apt]]，是python写的，bootstrap代价有点大，但对我而言python是必装的，也不是大问题了。
+
+~~完成的代码在这里: http://code.google.com/p/bamanzi-misc/source/browse/trunk/cygwin/cyg-apt~~ ，还没有在cyg-apt原项目网站上提交patch。
+	(挪到了: http://bitbucket.org/bamanzi/misc-utils/src/default/cygwin/cyg-apt )
+
+支持多repo的方法是在~/.cyg-apt里面添加一个mirrors配置项，格式为python的dict格式，例如:
+
+	''mirrors = { 'main': 'http://ftp.cn.debian.org/cygwin', 'ports': 'http://downloads.sourceforge.net/cygwin-ports' }''
+
+然后执行:
+
+	'''
+	cyg-apt update
+	cyg-apt install strigi
+	'''
+
+
+就等着安装完成吧。
+
+(不过，尚不支持同一类仓库的多个mirror——如果想一个mirror连不上时，转向另一个mirror去下载，目前是不支持的。因为我觉得暂时没有太大必要，因为在''~/.cyg-apt''里换一个mirror就是了，至于原来下载下来的包虽说是按mirror url分目录存放的，但手工挪一下倒也不难）
+
+另外，我改掉了cyg-apt原本每次都去自动更新setup.ini的行为，改为''cyg-apt update''时才更新，这跟Debian apt-get的行为一致 —— 不过cyg-apt原本的对某些子命令(比如''install''）会自动更新setup.ini行为并未删除，而是改到配置项''auto_update''（或者命令行选项'-a'）上了。

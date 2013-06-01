@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-05-30T22:37:01+08:00
+
+====== 又两个grep的替代品: Rak和Grin ======
+Created 星期四 30 五月 2013
+
+@grep @cmdline @python
+
+看这个意思，各种语言都要把grep重新实现一遍:
+
+===== Rak =====
+http://rak.rubyforge.org/
+
+	Rak is a grep replacement in pure Ruby. It accepts Ruby syntax regular expressions and automatically recurses directories, skipping .svn/, .cvs/, pkg/ and more things you don't care about. It is based on the Perl tool ack by Andy Lester.
+
+
+===== Grin =====
+
+http://pypi.python.org/pypi/grin/
+
+	A grep program configured the way I like it.
+	
+	I wrote grin to help me search directories full of source code. The venerable GNU grep and find are great tools, but they fall just a little short for my normal use cases.
+	
+	...Also, I was bored. It seems to be catching. Perl has ack, Ruby has rak, and now Python has grin
+
+grin比ack好的一点是，ack缺省是按编程语言扩展名来搜的，一些它不识别的编程语言就得重新定义，所以常常临时需要用ack -a，而grin跟grep的行为比较一致，没有这个问题。
+
+参见: [[http://www.cnblogs.com/bamanzi/archive/2012/01/03/two-grep-replacement-or-supplement.html|grep的两个替代品(ack & glark) - 巴蛮子 - 博客园]]
+

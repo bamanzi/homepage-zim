@@ -1,0 +1,77 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-05-30T22:31:01+08:00
+
+====== 浏览器里最强的搜索栏(duckduckgo !bang) ======
+Created 星期四 30 五月 2013
+
+@firefox @chrome @google
+
+为了进行一些专项搜索（比如在[[http://addons.mozilla.org/|AMO]]上搜索Firefox扩展，在[[http://pypi.python.org/|PyPI]]上搜索Python包，在http://packages.debian.org 搜索Debian包），我给Firefox和Chrome都配了好多搜索引擎，每个配上一个关键字，这样就可以在地址栏输入"amo firebug"直接从AMO网站上按关键字搜索firebug了。。。
+
+早上看见一篇 [[http://opensourcehacker.com/2012/09/25/useful-duckduckgo-searches-for-developers/|Useful duckduckgo searches for developers]]，里面说到DuckDuckGo搜索引擎提供一种[[https://duckduckgo.com/bang.html|!Bang语法]]，翻了一下，哇，这才是终极的替代品！
+
+为什么这么说？**因为大多数情况下我不再需要上面那些配置，直接在DuckDuckGo的输入框里面输入"!amo firebug"或者"!dpkg gedit"就能完成上述功能了！** 而且很多关键字跟我原来的习惯是一致的：amo, pypi, dpkg...
+
+如果说我将DuckDuckGo设置为Firefox/Chrome的默认搜索引擎，那就更方便了，都不用进入DuckDuckGo的网站，直接在Firefox/Chrome搜索框里按!bang方式输入就行了，哈哈。
+
+不过上面为什么说“大多数情况下”？你看看[[https://duckduckgo.com/bang.html|!Bang页面]]列出的用法就知道了，很多很多常用网站都有对应的关键字，下面是我常用的一些搜索，包含了各项Google应用、Python/Javascript语法、Python软件包、Linux软件包、man page、Vim/Emacs/TotalCommander插件。。。 该页面还有很多很多。。。
+
+如果还有一些你常用的没有包含在里面，可以提交申请，也可以再配合浏览器的搜索引擎来进行本地扩展。
+
+    Google (!g)
+    Google HK (!ghk)
+    Google CN (!gcn)
+    Google Images (!img)
+    Google Maps (!gmap)
+    Google Blogs (!gblogs)
+    Google Groups (!gg)
+    Google Reader (!gr)
+     
+    Chrome Extension Repository (!crx)
+    Firefox Add-ons (!firefox)
+    Firefox Addons (!amo)
+     
+    Vim Scripts (!vimscripts)
+    Vim.org (!vim)
+    Vimdoc (!vimdoc)
+    EmacsWiki (!emacs)
+    EmacsWiki (!emacswiki)
+     
+    !github
+    !bitbucket
+    !sourceforge
+    Google Code (!gcode)
+     
+    Debian Packages (!dpkg)
+    Debian file search (!dfiles)
+    openSUSE Software (!susepkg)
+    Ubuntu Packages (!upackages)
+    Ubuntu Manpages (!uman)
+    man.cx (!man)
+     
+    JavaScript Docs (!js)
+    Mozilla Developer Center (!mdc)
+    Mozilla Developer Network (!mdn)
+    Python Docs (!py)
+    Pypi.python.org (!pypi)
+    Python2.6 Docs (!python26)
+    Python2.7 Docs (!python27)
+     
+    Wikipedia (!w)
+    Wikipedia (ZH) (!wzh)
+    Wiktionary (!wt)
+     
+    DICT.org (!dict)
+    WordNet (!wordnet)
+    Google Translate (!tr)  (可惜没有en <-> 中文的。下面这个可以用来查单词，但整句就不行了)
+    LEO Dictionary Chinese (!leoc)
+     
+    AlternativeTo (!altto)
+    TotalCmd.Net (!totalcmd)
+     
+    Twitter (!twitter)
+    StackOverflow (!so)
+    stackexchange.com (!sx)
+
+标签: firefox
